@@ -1,0 +1,418 @@
+{
+  "sources": [
+    {
+      "sourceType": "CSV",
+      "examples": [
+        "CSV"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "Excel",
+      "examples": [
+        "Excel"
+      ],
+      "connectorNode": "excel",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "JSON",
+      "examples": [
+        "JSON"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "NDJSON",
+      "examples": [
+        "NDJSON"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "Parquet",
+      "examples": [
+        "Parquet"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "FHIR Bulk Export",
+      "examples": [
+        "FHIR Bulk Export"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "high",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "X12 EDI 837",
+      "examples": [
+        "X12 EDI 837"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "high",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "X12 EDI 835",
+      "examples": [
+        "X12 EDI 835"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "high",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "X12 EDI 270/271",
+      "examples": [
+        "X12 EDI 270/271"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "high",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "X12 EDI 276/277",
+      "examples": [
+        "X12 EDI 276/277"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "high",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "SFTP file drops",
+      "examples": [
+        "SFTP file drops"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "credential",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "Google Drive files",
+      "examples": [
+        "Google Drive files"
+      ],
+      "connectorNode": "google-drive",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "credential",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "Google Sheets",
+      "examples": [
+        "Google Sheets"
+      ],
+      "connectorNode": "google-sheets",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "credential",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "API endpoints",
+      "examples": [
+        "API endpoints"
+      ],
+      "connectorNode": "http-request",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "credential",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "GraphQL endpoints",
+      "examples": [
+        "GraphQL endpoints"
+      ],
+      "connectorNode": "graphql",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "credential",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "Database tables",
+      "examples": [
+        "Database tables"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "credential",
+      "expectedVolume": "large",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "Webhook/event streams",
+      "examples": [
+        "Webhook/event streams"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "streaming",
+      "batchOrStreaming": "streaming",
+      "authType": "shared-space-scope",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    },
+    {
+      "sourceType": "SharedSpace existing artifacts",
+      "examples": [
+        "SharedSpace existing artifacts"
+      ],
+      "connectorNode": "shared-space",
+      "ingestionMode": "batch-file",
+      "batchOrStreaming": "batch",
+      "authType": "shared-space-scope",
+      "expectedVolume": "standard",
+      "schemaDiscoveryMethod": "profile-or-contract",
+      "incrementalStrategy": "checksum-or-watermark",
+      "checkpointStrategy": "run manifest plus source pointer",
+      "phiPiiRisk": "depends-on-source",
+      "qualityGates": [
+        "schema",
+        "count",
+        "checksum"
+      ],
+      "sharedSpaceLandingPath": "/drive/{organizationId}/workflow-agent/{workflowSlug}/runs/{runId}/source/",
+      "failureHandling": "fail closed for invalid contracts",
+      "replayStrategy": "reuse manifest and checkpoint"
+    }
+  ]
+}

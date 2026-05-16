@@ -19,6 +19,14 @@
   ],
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "vendor/**/*",
+    "src/backend/modules/**/*",
+    "src/ui/dataloaders/**/*",
+    "src/ui/screens/**/*",
+    "src/ui/sockets/**/*",
+    "src/ui/designer/**/*",
+    "src/entity/entities/**/*",
+    "src/entity/graphql/**/*"
   ]
 }

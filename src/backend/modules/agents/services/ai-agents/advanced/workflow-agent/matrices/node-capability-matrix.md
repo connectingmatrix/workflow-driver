@@ -1,0 +1,86 @@
+# Node Capability Matrix
+
+Catalog root: /Users/abeer/dev/giga/workflow-nodes/src/nodes
+
+Nodes captured: 78
+
+Runtime source of truth: `loadWorkflowNodeCatalog()` scans the live `workflow-nodes/src/nodes` folder. This file is a durable review snapshot.
+
+- action-router: integration, workflow-node, PHI/PII standard
+- advanced-swarm-v2: agent, workflow-node, PHI/PII standard
+- agent-file-ingest: agent, workflow-node, PHI/PII high-review
+- agent-memory: agent, workflow-node, PHI/PII standard
+- agent-task-graph: agent, workflow-node, PHI/PII standard
+- ai-agent: agent, workflow-node, PHI/PII standard
+- airtable: integration, workflow-node, PHI/PII standard
+- analyze-text-with-model: ai-model, workflow-node, PHI/PII standard
+- artifact-publish: orchestration, workflow-node, PHI/PII standard
+- chart: integration, workflow-node, PHI/PII standard
+- churn-analysis: ai-model, workflow-node, PHI/PII standard
+- claude: integration, workflow-node, PHI/PII standard
+- code: integration, workflow-node, PHI/PII standard
+- current-chat: integration, workflow-node, PHI/PII standard
+- current-subjects: integration, workflow-node, PHI/PII standard
+- database-driver: file, backend-tool, PHI/PII high-review
+- deepseek: integration, workflow-node, PHI/PII standard
+- email: integration, workflow-node, PHI/PII standard
+- evaluator: ai-model, workflow-node, PHI/PII standard
+- excel: file, workflow-node, PHI/PII high-review
+- execute-workflow: orchestration, workflow-node, PHI/PII standard
+- feature-analysis: ai-model, workflow-node, PHI/PII standard
+- file: file, workflow-node, PHI/PII high-review
+- gemini: integration, workflow-node, PHI/PII standard
+- giga-ai: integration, workflow-node, PHI/PII standard
+- gis-world-map-v2: integration, workflow-node, PHI/PII standard
+- gmail: integration, workflow-node, PHI/PII standard
+- google-drive: file, workflow-node, PHI/PII high-review
+- google-sheets: file, workflow-node, PHI/PII standard
+- graphql: api, backend-tool, PHI/PII standard
+- groq: integration, workflow-node, PHI/PII standard
+- http-request: api, backend-tool, PHI/PII standard
+- if-else: orchestration, workflow-node, PHI/PII standard
+- image-studio-v2: integration, workflow-node, PHI/PII standard
+- loader: integration, workflow-node, PHI/PII standard
+- local-runner-job-v2: api, backend-tool, PHI/PII standard
+- loop-over-items: orchestration, workflow-node, PHI/PII standard
+- mcp: api, backend-tool, PHI/PII standard
+- mcp-capabilities: api, backend-tool, PHI/PII standard
+- mcp-runtime: api, backend-tool, PHI/PII standard
+- merge: orchestration, workflow-node, PHI/PII standard
+- metadata: integration, workflow-node, PHI/PII standard
+- mistral: integration, workflow-node, PHI/PII standard
+- neural-net-trainer: ai-model, workflow-node, PHI/PII standard
+- openai: integration, workflow-node, PHI/PII standard
+- output-format: integration, workflow-node, PHI/PII standard
+- perplexity: integration, workflow-node, PHI/PII standard
+- platform-fix-v2: integration, workflow-node, PHI/PII standard
+- rcm-csv-stream-profiler: medical-billing, backend-tool, PHI/PII high-review
+- rcm-decision-tree-trainer: medical-billing, backend-tool, PHI/PII high-review
+- rcm-feature-builder: medical-billing, backend-tool, PHI/PII high-review
+- rcm-knowledge-publisher: medical-billing, backend-tool, PHI/PII high-review
+- rcm-model-scorer: medical-billing, backend-tool, PHI/PII high-review
+- rcm-neural-net-trainer: medical-billing, backend-tool, PHI/PII high-review
+- replace-me: integration, workflow-node, PHI/PII standard
+- respond-end: orchestration, workflow-node, PHI/PII standard
+- run-category-action: integration, workflow-node, PHI/PII standard
+- run-channel-action: integration, workflow-node, PHI/PII standard
+- run-chat-action: integration, workflow-node, PHI/PII standard
+- run-post-action: integration, workflow-node, PHI/PII standard
+- run-subject-action: integration, workflow-node, PHI/PII standard
+- run-user-tree-action: integration, workflow-node, PHI/PII standard
+- sentiment-analysis: ai-model, workflow-node, PHI/PII standard
+- serp-search: integration, workflow-node, PHI/PII standard
+- server-only: integration, workflow-node, PHI/PII standard
+- shared-space: shared-space, backend-tool, PHI/PII standard
+- slack: integration, workflow-node, PHI/PII standard
+- software-system-builder-v2: api, backend-tool, PHI/PII standard
+- software-system-runner-v2: api, backend-tool, PHI/PII standard
+- start: orchestration, workflow-node, PHI/PII standard
+- stop-error: orchestration, workflow-node, PHI/PII standard
+- text-analysis: ai-model, workflow-node, PHI/PII standard
+- validate-workflow-cypher: orchestration, workflow-node, PHI/PII standard
+- wait: orchestration, workflow-node, PHI/PII standard
+- workflow: orchestration, workflow-node, PHI/PII standard
+- workflow-artifact-publish: orchestration, workflow-node, PHI/PII standard
+- workflow-file-download: orchestration, workflow-node, PHI/PII high-review
+- workflow-file-inspect: orchestration, workflow-node, PHI/PII high-review

@@ -1,0 +1,43 @@
+{
+  "requiredFields": [
+    "modelName",
+    "modelType",
+    "trainingDataReference",
+    "featureArtifactReference",
+    "targetColumn",
+    "labelDefinition",
+    "metrics",
+    "thresholds",
+    "knownBiasRiskNotes",
+    "approvedUse",
+    "prohibitedUse",
+    "version",
+    "artifactPath"
+  ],
+  "metricsByTask": {
+    "classification": [
+      "accuracy",
+      "precision",
+      "recall",
+      "F1",
+      "ROC-AUC",
+      "confusion matrix"
+    ],
+    "denialPrediction": [
+      "precision at threshold",
+      "recall at threshold",
+      "PR-AUC",
+      "review impact"
+    ],
+    "regression": [
+      "MAE",
+      "RMSE",
+      "R2"
+    ]
+  },
+  "nonNegotiables": [
+    "Never claim production ready without metrics",
+    "Never use raw PHI in model cards",
+    "Never allow target leakage"
+  ]
+}

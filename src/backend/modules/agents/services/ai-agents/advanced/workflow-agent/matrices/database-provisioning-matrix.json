@@ -1,0 +1,586 @@
+{
+  "tables": [
+    {
+      "tableName": "workflow_runs",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "workflow_artifacts",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "data_sources",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "data_contracts",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "data_quality_reports",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "lineage_events",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "claims",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [
+        "metadata"
+      ],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "claim_lines",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [
+        "metadata"
+      ],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "remittances",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [
+        "metadata"
+      ],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "remittance_lines",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [
+        "metadata"
+      ],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "payers",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "providers",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "denials",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [
+        "metadata"
+      ],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "appeals",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [
+        "metadata"
+      ],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "model_registry",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "model_versions",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "model_scores",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "rcm_work_queue_items",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    },
+    {
+      "tableName": "audit_events",
+      "purpose": "queryable workflow state",
+      "columns": [
+        "id",
+        "organization_id",
+        "created_at",
+        "updated_at",
+        "metadata"
+      ],
+      "indexes": [
+        "organization_id",
+        "created_at"
+      ],
+      "constraints": [
+        "id primary key"
+      ],
+      "sensitiveColumns": [],
+      "encryptionMaskingNeeds": "organization policy",
+      "sourceWorkflow": "workflow-agent",
+      "targetApis": [],
+      "retentionPolicy": "organization policy",
+      "migrationPlan": "document before provision",
+      "seedDataPlan": "synthetic only",
+      "tests": [
+        "migration",
+        "seed",
+        "query"
+      ]
+    }
+  ]
+}

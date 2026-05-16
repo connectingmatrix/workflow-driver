@@ -1,0 +1,3 @@
+claimId,payerId,providerId,serviceDate,billedAmount,denied
+C-001,PAYER-1,PROV-1,2026-01-01,120.50,false
+C-002,PAYER-2,PROV-1,2026-01-02,440.00,true

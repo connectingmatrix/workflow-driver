@@ -1,0 +1,1709 @@
+{
+  "patterns": [
+    {
+      "patternId": "BATCH_FILE_ETL",
+      "patternName": "Batch File Etl",
+      "whenToUse": [
+        "batch file etl"
+      ],
+      "typicalUserPrompts": [
+        "Build batch file etl"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "STREAMING_EVENT_ETL",
+      "patternName": "Streaming Event Etl",
+      "whenToUse": [
+        "streaming event etl"
+      ],
+      "typicalUserPrompts": [
+        "Build streaming event etl"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "DATABASE_TO_WAREHOUSE_ETL",
+      "patternName": "Database To Warehouse Etl",
+      "whenToUse": [
+        "database to warehouse etl"
+      ],
+      "typicalUserPrompts": [
+        "Build database to warehouse etl"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [
+        "workflow_runs",
+        "workflow_artifacts",
+        "lineage_events"
+      ],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "API_TO_DATABASE_ETL",
+      "patternName": "Api To Database Etl",
+      "whenToUse": [
+        "api to database etl"
+      ],
+      "typicalUserPrompts": [
+        "Build api to database etl"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [
+        "workflow_runs",
+        "workflow_artifacts",
+        "lineage_events"
+      ],
+      "apiNeeds": [
+        "run",
+        "status",
+        "artifacts"
+      ],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "FHIR_BULK_EXPORT_ETL",
+      "patternName": "Fhir Bulk Export Etl",
+      "whenToUse": [
+        "fhir bulk export etl"
+      ],
+      "typicalUserPrompts": [
+        "Build fhir bulk export etl"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "X12_837_CLAIM_INGEST",
+      "patternName": "X12 837 Claim Ingest",
+      "whenToUse": [
+        "x12 837 claim ingest"
+      ],
+      "typicalUserPrompts": [
+        "Build x12 837 claim ingest"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "x12-parser",
+        "phi-redaction-gate"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "X12_835_REMITTANCE_INGEST",
+      "patternName": "X12 835 Remittance Ingest",
+      "whenToUse": [
+        "x12 835 remittance ingest"
+      ],
+      "typicalUserPrompts": [
+        "Build x12 835 remittance ingest"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "x12-parser",
+        "phi-redaction-gate"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "RCM_CSV_PROFILE_AND_FEATURES",
+      "patternName": "Rcm Csv Profile And Features",
+      "whenToUse": [
+        "rcm csv profile and features"
+      ],
+      "typicalUserPrompts": [
+        "Build rcm csv profile and features"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "model-evaluation-gate",
+        "model-drift-monitor"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [
+        "workflow_runs",
+        "workflow_artifacts",
+        "lineage_events"
+      ],
+      "apiNeeds": [
+        "run",
+        "status",
+        "artifacts"
+      ],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "RCM_DENIAL_PREDICTION",
+      "patternName": "Rcm Denial Prediction",
+      "whenToUse": [
+        "rcm denial prediction"
+      ],
+      "typicalUserPrompts": [
+        "Build rcm denial prediction"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "model-evaluation-gate",
+        "model-drift-monitor"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [
+        "workflow_runs",
+        "workflow_artifacts",
+        "lineage_events"
+      ],
+      "apiNeeds": [
+        "run",
+        "status",
+        "artifacts"
+      ],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [
+        "metrics",
+        "model-card",
+        "threshold-decision"
+      ],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "RCM_REMITTANCE_RECONCILIATION",
+      "patternName": "Rcm Remittance Reconciliation",
+      "whenToUse": [
+        "rcm remittance reconciliation"
+      ],
+      "typicalUserPrompts": [
+        "Build rcm remittance reconciliation"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "model-evaluation-gate",
+        "model-drift-monitor"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [
+        "workflow_runs",
+        "workflow_artifacts",
+        "lineage_events"
+      ],
+      "apiNeeds": [
+        "run",
+        "status",
+        "artifacts"
+      ],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "RCM_CLAIM_STATUS_WORKFLOW",
+      "patternName": "Rcm Claim Status Workflow",
+      "whenToUse": [
+        "rcm claim status workflow"
+      ],
+      "typicalUserPrompts": [
+        "Build rcm claim status workflow"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "model-evaluation-gate",
+        "model-drift-monitor"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [
+        "workflow_runs",
+        "workflow_artifacts",
+        "lineage_events"
+      ],
+      "apiNeeds": [
+        "run",
+        "status",
+        "artifacts"
+      ],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "CLAIM_UNDERPAYMENT_DETECTION",
+      "patternName": "Claim Underpayment Detection",
+      "whenToUse": [
+        "claim underpayment detection"
+      ],
+      "typicalUserPrompts": [
+        "Build claim underpayment detection"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "CLAIM_APPEAL_PRIORITIZATION",
+      "patternName": "Claim Appeal Prioritization",
+      "whenToUse": [
+        "claim appeal prioritization"
+      ],
+      "typicalUserPrompts": [
+        "Build claim appeal prioritization"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "phi-pii-classification",
+        "redaction-before-logs",
+        "organization-scoped-sharedspace"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "PATIENT_BALANCE_SEGMENTATION",
+      "patternName": "Patient Balance Segmentation",
+      "whenToUse": [
+        "patient balance segmentation"
+      ],
+      "typicalUserPrompts": [
+        "Build patient balance segmentation"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "MEDICAL_BILLING_KNOWLEDGE_PACKAGE",
+      "patternName": "Medical Billing Knowledge Package",
+      "whenToUse": [
+        "medical billing knowledge package"
+      ],
+      "typicalUserPrompts": [
+        "Build medical billing knowledge package"
+      ],
+      "requiredExistingNodes": [
+        "shared-space",
+        "rcm-csv-stream-profiler",
+        "rcm-feature-builder",
+        "rcm-decision-tree-trainer",
+        "rcm-neural-net-trainer",
+        "rcm-model-scorer",
+        "rcm-knowledge-publisher",
+        "evaluator",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "SENTIMENT_ANALYSIS_PIPELINE",
+      "patternName": "Sentiment Analysis Pipeline",
+      "whenToUse": [
+        "sentiment analysis pipeline"
+      ],
+      "typicalUserPrompts": [
+        "Build sentiment analysis pipeline"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "CHURN_ANALYSIS_PIPELINE",
+      "patternName": "Churn Analysis Pipeline",
+      "whenToUse": [
+        "churn analysis pipeline"
+      ],
+      "typicalUserPrompts": [
+        "Build churn analysis pipeline"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "CUSTOM_NEURAL_NET_TRAINING",
+      "patternName": "Custom Neural Net Training",
+      "whenToUse": [
+        "custom neural net training"
+      ],
+      "typicalUserPrompts": [
+        "Build custom neural net training"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [
+        "metrics",
+        "model-card",
+        "threshold-decision"
+      ],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "CUSTOM_DECISION_TREE_TRAINING",
+      "patternName": "Custom Decision Tree Training",
+      "whenToUse": [
+        "custom decision tree training"
+      ],
+      "typicalUserPrompts": [
+        "Build custom decision tree training"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [
+        "metrics",
+        "model-card",
+        "threshold-decision"
+      ],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "MODEL_SCORING_PIPELINE",
+      "patternName": "Model Scoring Pipeline",
+      "whenToUse": [
+        "model scoring pipeline"
+      ],
+      "typicalUserPrompts": [
+        "Build model scoring pipeline"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "model-evaluation-gate",
+        "model-drift-monitor"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [
+        "run",
+        "status",
+        "artifacts"
+      ],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [
+        "metrics",
+        "model-card",
+        "threshold-decision"
+      ],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "MODEL_DRIFT_MONITORING",
+      "patternName": "Model Drift Monitoring",
+      "whenToUse": [
+        "model drift monitoring"
+      ],
+      "typicalUserPrompts": [
+        "Build model drift monitoring"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [
+        "model-evaluation-gate",
+        "model-drift-monitor"
+      ],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [
+        "metrics",
+        "model-card",
+        "threshold-decision"
+      ],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "DATA_QUALITY_GATE_PIPELINE",
+      "patternName": "Data Quality Gate Pipeline",
+      "whenToUse": [
+        "data quality gate pipeline"
+      ],
+      "typicalUserPrompts": [
+        "Build data quality gate pipeline"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "PHI_REDACTION_PIPELINE",
+      "patternName": "Phi Redaction Pipeline",
+      "whenToUse": [
+        "phi redaction pipeline"
+      ],
+      "typicalUserPrompts": [
+        "Build phi redaction pipeline"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "DATA_LINEAGE_CAPTURE",
+      "patternName": "Data Lineage Capture",
+      "whenToUse": [
+        "data lineage capture"
+      ],
+      "typicalUserPrompts": [
+        "Build data lineage capture"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "DATABASE_PROVISION_AND_API_EXPOSURE",
+      "patternName": "Database Provision And Api Exposure",
+      "whenToUse": [
+        "database provision and api exposure"
+      ],
+      "typicalUserPrompts": [
+        "Build database provision and api exposure"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [
+        "workflow_runs",
+        "workflow_artifacts",
+        "lineage_events"
+      ],
+      "apiNeeds": [
+        "run",
+        "status",
+        "artifacts"
+      ],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "AI_AGENT_DRIVEN_WORKFLOW",
+      "patternName": "Ai Agent Driven Workflow",
+      "whenToUse": [
+        "ai agent driven workflow"
+      ],
+      "typicalUserPrompts": [
+        "Build ai agent driven workflow"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    },
+    {
+      "patternId": "HUMAN_REVIEW_QUEUE_WORKFLOW",
+      "patternName": "Human Review Queue Workflow",
+      "whenToUse": [
+        "human review queue workflow"
+      ],
+      "typicalUserPrompts": [
+        "Build human review queue workflow"
+      ],
+      "requiredExistingNodes": [
+        "start",
+        "shared-space",
+        "respond-end"
+      ],
+      "potentialCustomNodes": [],
+      "sharedSpaceArtifacts": [
+        "input-manifest",
+        "contracts",
+        "quality-report",
+        "lineage-events",
+        "final-report"
+      ],
+      "dataContracts": [
+        "source-schema",
+        "normalized-schema",
+        "output-schema"
+      ],
+      "databaseNeeds": [],
+      "apiNeeds": [],
+      "qualityGates": [
+        "schema",
+        "required-fields",
+        "checksum",
+        "record-count"
+      ],
+      "securityGates": [
+        "credential-safety"
+      ],
+      "mlEvaluationNeeds": [],
+      "lineageNeeds": [
+        "run-id",
+        "input-artifacts",
+        "output-artifacts",
+        "checksums"
+      ],
+      "workflowCypherShape": "start -> validate/cache -> transform/model/action -> respond-end",
+      "requiredTests": [
+        "matrix mapping",
+        "contract validation",
+        "workflow cypher validation"
+      ],
+      "completionCriteria": [
+        "Workflow Cypher validates",
+        "Artifacts are scoped",
+        "Final report lists limitations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "type": "object",
+  "required": [
+    "status",
+    "requirementBreakdown",
+    "dataStories",
+    "nodeCatalog",
+    "existingNodeMatches",
+    "sourceSystemMatrix",
+    "domainEntityMatrix",
+    "artifactPackage",
+    "testPlan",
+    "workflowDag",
+    "valueScore",
+    "finalDeliveryReport",
+    "finalReport"
+  ],
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "requirementBreakdown": {
+      "type": "object"
+    },
+    "dataStories": {
+      "type": "array"
+    },
+    "nodeCatalog": {
+      "type": "object"
+    },
+    "existingNodeMatches": {
+      "type": "array"
+    },
+    "sourceSystemMatrix": {
+      "type": "array"
+    },
+    "domainEntityMatrix": {
+      "type": "array"
+    },
+    "artifactPackage": {
+      "type": "object"
+    },
+    "testPlan": {
+      "type": "object"
+    },
+    "workflowDag": {
+      "type": "object"
+    },
+    "valueScore": {
+      "type": "object"
+    },
+    "finalDeliveryReport": {
+      "type": "object"
+    },
+    "finalReport": {
+      "type": "string"
+    }
+  }
+}

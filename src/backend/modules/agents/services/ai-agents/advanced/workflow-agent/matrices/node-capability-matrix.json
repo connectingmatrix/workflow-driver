@@ -1,0 +1,3271 @@
+{
+  "generatedAt": "2026-05-11",
+  "catalogRoot": "/Users/abeer/dev/giga/workflow-nodes/src/nodes",
+  "dynamicSource": "workflow-nodes/src/nodes via loadWorkflowNodeCatalog()",
+  "snapshotOnly": true,
+  "nodeCount": 78,
+  "nodes": [
+    {
+      "nodeId": "action-router",
+      "nodeName": "Action Router",
+      "filePath": "../workflow-nodes/src/nodes/action-router",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "action-router in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "advanced-swarm-v2",
+      "nodeName": "Advanced Swarm V2",
+      "filePath": "../workflow-nodes/src/nodes/advanced-swarm-v2",
+      "category": "agent",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "agent"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "advanced-swarm-v2 in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "agent-file-ingest",
+      "nodeName": "Agent File Ingest",
+      "filePath": "../workflow-nodes/src/nodes/agent-file-ingest",
+      "category": "agent",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "agent"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "agent-file-ingest in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "agent-memory",
+      "nodeName": "Agent Memory",
+      "filePath": "../workflow-nodes/src/nodes/agent-memory",
+      "category": "agent",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "agent"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "agent-memory in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "agent-task-graph",
+      "nodeName": "Agent Task Graph",
+      "filePath": "../workflow-nodes/src/nodes/agent-task-graph",
+      "category": "agent",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "agent"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "agent-task-graph in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "ai-agent",
+      "nodeName": "Ai Agent",
+      "filePath": "../workflow-nodes/src/nodes/ai-agent",
+      "category": "agent",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "agent"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "ai-agent in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "airtable",
+      "nodeName": "Airtable",
+      "filePath": "../workflow-nodes/src/nodes/airtable",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "airtable in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "analyze-text-with-model",
+      "nodeName": "Analyze Text With Model",
+      "filePath": "../workflow-nodes/src/nodes/analyze-text-with-model",
+      "category": "ai-model",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "ai-model"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "analyze-text-with-model in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "artifact-publish",
+      "nodeName": "Artifact Publish",
+      "filePath": "../workflow-nodes/src/nodes/artifact-publish",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "artifact-publish in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "chart",
+      "nodeName": "Chart",
+      "filePath": "../workflow-nodes/src/nodes/chart",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "chart in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "churn-analysis",
+      "nodeName": "Churn Analysis",
+      "filePath": "../workflow-nodes/src/nodes/churn-analysis",
+      "category": "ai-model",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "ai-model"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "churn-analysis in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "claude",
+      "nodeName": "Claude",
+      "filePath": "../workflow-nodes/src/nodes/claude",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "claude in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "code",
+      "nodeName": "Code",
+      "filePath": "../workflow-nodes/src/nodes/code",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "code in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "current-chat",
+      "nodeName": "Current Chat",
+      "filePath": "../workflow-nodes/src/nodes/current-chat",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "current-chat in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "current-subjects",
+      "nodeName": "Current Subjects",
+      "filePath": "../workflow-nodes/src/nodes/current-subjects",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "current-subjects in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "database-driver",
+      "nodeName": "Database Driver",
+      "filePath": "../workflow-nodes/src/nodes/database-driver",
+      "category": "file",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "file"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "database-driver in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "deepseek",
+      "nodeName": "Deepseek",
+      "filePath": "../workflow-nodes/src/nodes/deepseek",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "deepseek in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "email",
+      "nodeName": "Email",
+      "filePath": "../workflow-nodes/src/nodes/email",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "email in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "evaluator",
+      "nodeName": "Evaluator",
+      "filePath": "../workflow-nodes/src/nodes/evaluator",
+      "category": "ai-model",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "ai-model"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "evaluator in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "excel",
+      "nodeName": "Excel",
+      "filePath": "../workflow-nodes/src/nodes/excel",
+      "category": "file",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "file"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "excel in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "execute-workflow",
+      "nodeName": "Execute Workflow",
+      "filePath": "../workflow-nodes/src/nodes/execute-workflow",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "execute-workflow in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "feature-analysis",
+      "nodeName": "Feature Analysis",
+      "filePath": "../workflow-nodes/src/nodes/feature-analysis",
+      "category": "ai-model",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "ai-model"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "feature-analysis in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "file",
+      "nodeName": "File",
+      "filePath": "../workflow-nodes/src/nodes/file",
+      "category": "file",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "file"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "file in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "gemini",
+      "nodeName": "Gemini",
+      "filePath": "../workflow-nodes/src/nodes/gemini",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "gemini in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "giga-ai",
+      "nodeName": "Giga Ai",
+      "filePath": "../workflow-nodes/src/nodes/giga-ai",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "catalog-entry",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "giga-ai in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": false
+    },
+    {
+      "nodeId": "gis-world-map-v2",
+      "nodeName": "Gis World Map V2",
+      "filePath": "../workflow-nodes/src/nodes/gis-world-map-v2",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "gis-world-map-v2 in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "gmail",
+      "nodeName": "Gmail",
+      "filePath": "../workflow-nodes/src/nodes/gmail",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "gmail in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "google-drive",
+      "nodeName": "Google Drive",
+      "filePath": "../workflow-nodes/src/nodes/google-drive",
+      "category": "file",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "file"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "google-drive in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "google-sheets",
+      "nodeName": "Google Sheets",
+      "filePath": "../workflow-nodes/src/nodes/google-sheets",
+      "category": "file",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "file"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "google-sheets in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "graphql",
+      "nodeName": "Graphql",
+      "filePath": "../workflow-nodes/src/nodes/graphql",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "graphql in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "groq",
+      "nodeName": "Groq",
+      "filePath": "../workflow-nodes/src/nodes/groq",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "groq in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "http-request",
+      "nodeName": "Http Request",
+      "filePath": "../workflow-nodes/src/nodes/http-request",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "http-request in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "if-else",
+      "nodeName": "If Else",
+      "filePath": "../workflow-nodes/src/nodes/if-else",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "if-else in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "image-studio-v2",
+      "nodeName": "Image Studio V2",
+      "filePath": "../workflow-nodes/src/nodes/image-studio-v2",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "image-studio-v2 in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "loader",
+      "nodeName": "Loader",
+      "filePath": "../workflow-nodes/src/nodes/loader",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "loader in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "local-runner-job-v2",
+      "nodeName": "Local Runner Job V2",
+      "filePath": "../workflow-nodes/src/nodes/local-runner-job-v2",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "local-runner-job-v2 in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "loop-over-items",
+      "nodeName": "Loop Over Items",
+      "filePath": "../workflow-nodes/src/nodes/loop-over-items",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "supported",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "loop-over-items in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "mcp",
+      "nodeName": "Mcp",
+      "filePath": "../workflow-nodes/src/nodes/mcp",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "catalog-entry",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "mcp in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": false
+    },
+    {
+      "nodeId": "mcp-capabilities",
+      "nodeName": "Mcp Capabilities",
+      "filePath": "../workflow-nodes/src/nodes/mcp-capabilities",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "mcp-capabilities in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "mcp-runtime",
+      "nodeName": "Mcp Runtime",
+      "filePath": "../workflow-nodes/src/nodes/mcp-runtime",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "mcp-runtime in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "merge",
+      "nodeName": "Merge",
+      "filePath": "../workflow-nodes/src/nodes/merge",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "merge in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "metadata",
+      "nodeName": "Metadata",
+      "filePath": "../workflow-nodes/src/nodes/metadata",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "metadata in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "mistral",
+      "nodeName": "Mistral",
+      "filePath": "../workflow-nodes/src/nodes/mistral",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "mistral in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "neural-net-trainer",
+      "nodeName": "Neural Net Trainer",
+      "filePath": "../workflow-nodes/src/nodes/neural-net-trainer",
+      "category": "ai-model",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "ai-model"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "neural-net-trainer in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "openai",
+      "nodeName": "Openai",
+      "filePath": "../workflow-nodes/src/nodes/openai",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "openai in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "output-format",
+      "nodeName": "Output Format",
+      "filePath": "../workflow-nodes/src/nodes/output-format",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "output-format in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "perplexity",
+      "nodeName": "Perplexity",
+      "filePath": "../workflow-nodes/src/nodes/perplexity",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [
+        "provider credential"
+      ],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "perplexity in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "platform-fix-v2",
+      "nodeName": "Platform Fix V2",
+      "filePath": "../workflow-nodes/src/nodes/platform-fix-v2",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "platform-fix-v2 in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "rcm-csv-stream-profiler",
+      "nodeName": "Rcm Csv Stream Profiler",
+      "filePath": "../workflow-nodes/src/nodes/rcm-csv-stream-profiler",
+      "category": "medical-billing",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "supported",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "medical-billing"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "rcm-csv-stream-profiler in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "rcm-decision-tree-trainer",
+      "nodeName": "Rcm Decision Tree Trainer",
+      "filePath": "../workflow-nodes/src/nodes/rcm-decision-tree-trainer",
+      "category": "medical-billing",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "medical-billing"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "rcm-decision-tree-trainer in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "rcm-feature-builder",
+      "nodeName": "Rcm Feature Builder",
+      "filePath": "../workflow-nodes/src/nodes/rcm-feature-builder",
+      "category": "medical-billing",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "medical-billing"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "rcm-feature-builder in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "rcm-knowledge-publisher",
+      "nodeName": "Rcm Knowledge Publisher",
+      "filePath": "../workflow-nodes/src/nodes/rcm-knowledge-publisher",
+      "category": "medical-billing",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "medical-billing"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "rcm-knowledge-publisher in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "rcm-model-scorer",
+      "nodeName": "Rcm Model Scorer",
+      "filePath": "../workflow-nodes/src/nodes/rcm-model-scorer",
+      "category": "medical-billing",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "medical-billing"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "rcm-model-scorer in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "rcm-neural-net-trainer",
+      "nodeName": "Rcm Neural Net Trainer",
+      "filePath": "../workflow-nodes/src/nodes/rcm-neural-net-trainer",
+      "category": "medical-billing",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "medical-billing"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "rcm-neural-net-trainer in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "replace-me",
+      "nodeName": "Replace Me",
+      "filePath": "../workflow-nodes/src/nodes/replace-me",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "replace-me in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "respond-end",
+      "nodeName": "Respond End",
+      "filePath": "../workflow-nodes/src/nodes/respond-end",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "respond-end in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "run-category-action",
+      "nodeName": "Run Category Action",
+      "filePath": "../workflow-nodes/src/nodes/run-category-action",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "run-category-action in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "run-channel-action",
+      "nodeName": "Run Channel Action",
+      "filePath": "../workflow-nodes/src/nodes/run-channel-action",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "run-channel-action in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "run-chat-action",
+      "nodeName": "Run Chat Action",
+      "filePath": "../workflow-nodes/src/nodes/run-chat-action",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "run-chat-action in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "run-post-action",
+      "nodeName": "Run Post Action",
+      "filePath": "../workflow-nodes/src/nodes/run-post-action",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "run-post-action in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "run-subject-action",
+      "nodeName": "Run Subject Action",
+      "filePath": "../workflow-nodes/src/nodes/run-subject-action",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "run-subject-action in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "run-user-tree-action",
+      "nodeName": "Run User Tree Action",
+      "filePath": "../workflow-nodes/src/nodes/run-user-tree-action",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "run-user-tree-action in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "sentiment-analysis",
+      "nodeName": "Sentiment Analysis",
+      "filePath": "../workflow-nodes/src/nodes/sentiment-analysis",
+      "category": "ai-model",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "ai-model"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "sentiment-analysis in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "serp-search",
+      "nodeName": "Serp Search",
+      "filePath": "../workflow-nodes/src/nodes/serp-search",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "serp-search in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "server-only",
+      "nodeName": "Server Only",
+      "filePath": "../workflow-nodes/src/nodes/server-only",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "catalog-entry",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "server-only in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": false
+    },
+    {
+      "nodeId": "shared-space",
+      "nodeName": "Shared Space",
+      "filePath": "../workflow-nodes/src/nodes/shared-space",
+      "category": "shared-space",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [
+        "summary",
+        "list",
+        "stat",
+        "mkdir",
+        "download_url",
+        "ensure_cached",
+        "write_json",
+        "copy",
+        "move",
+        "checksum",
+        "delete"
+      ],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "shared-space"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "shared-space in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": false
+    },
+    {
+      "nodeId": "slack",
+      "nodeName": "Slack",
+      "filePath": "../workflow-nodes/src/nodes/slack",
+      "category": "integration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "integration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "slack in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "software-system-builder-v2",
+      "nodeName": "Software System Builder V2",
+      "filePath": "../workflow-nodes/src/nodes/software-system-builder-v2",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "software-system-builder-v2 in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "software-system-runner-v2",
+      "nodeName": "Software System Runner V2",
+      "filePath": "../workflow-nodes/src/nodes/software-system-runner-v2",
+      "category": "api",
+      "runtimeOwnership": "backend-tool",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "api"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "software-system-runner-v2 in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "start",
+      "nodeName": "Start",
+      "filePath": "../workflow-nodes/src/nodes/start",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "start in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "stop-error",
+      "nodeName": "Stop Error",
+      "filePath": "../workflow-nodes/src/nodes/stop-error",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "stop-error in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "text-analysis",
+      "nodeName": "Text Analysis",
+      "filePath": "../workflow-nodes/src/nodes/text-analysis",
+      "category": "ai-model",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "ai-model"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "text-analysis in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "validate-workflow-cypher",
+      "nodeName": "Validate Workflow Cypher",
+      "filePath": "../workflow-nodes/src/nodes/validate-workflow-cypher",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "validate-workflow-cypher in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "wait",
+      "nodeName": "Wait",
+      "filePath": "../workflow-nodes/src/nodes/wait",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "supported",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "wait in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "workflow",
+      "nodeName": "Workflow",
+      "filePath": "../workflow-nodes/src/nodes/workflow",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "not-primary",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "workflow in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "workflow-artifact-publish",
+      "nodeName": "Workflow Artifact Publish",
+      "filePath": "../workflow-nodes/src/nodes/workflow-artifact-publish",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "standard",
+      "dataVolumeSuitability": "standard",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "workflow-artifact-publish in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "workflow-file-download",
+      "nodeName": "Workflow File Download",
+      "filePath": "../workflow-nodes/src/nodes/workflow-file-download",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "workflow-file-download in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    },
+    {
+      "nodeId": "workflow-file-inspect",
+      "nodeName": "Workflow File Inspect",
+      "filePath": "../workflow-nodes/src/nodes/workflow-file-inspect",
+      "category": "orchestration",
+      "runtimeOwnership": "workflow-node",
+      "workerOrBackend": "worker.ts",
+      "inputs": [
+        "in:input"
+      ],
+      "outputs": [
+        "out:output"
+      ],
+      "commandPorts": [
+        "cmd:command"
+      ],
+      "fields": [
+        "runtime"
+      ],
+      "supportedOperations": [],
+      "requiredCredentials": [],
+      "sharedSpaceUsage": "reads-or-writes-artifacts",
+      "phiPiiSafetyLevel": "high-review",
+      "dataVolumeSuitability": "large-batch",
+      "streamingSuitability": "limited",
+      "batchSuitability": "supported",
+      "retrySemantics": "workflow-executor-policy",
+      "failureModes": [
+        "validation_error",
+        "runtime_error",
+        "credential_or_permission_error"
+      ],
+      "recommendedPatterns": [
+        "orchestration"
+      ],
+      "antiPatterns": [
+        "Do not log secrets or raw PHI",
+        "Do not bypass workflow validation"
+      ],
+      "exampleUsage": "workflow-file-inspect in a validated workflow DAG",
+      "testsAvailable": false,
+      "docsAvailable": true
+    }
+  ]
+}

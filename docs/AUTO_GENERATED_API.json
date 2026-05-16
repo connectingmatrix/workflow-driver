@@ -1,0 +1,35 @@
+{
+  "package": "@connectingmatrix/workflows",
+  "summary": "Workflow CRUD, versioning, validation, execution events, slash commands, dataloaders, and designer launcher. Imports preserved workflow/executor contracts instead of replacing them.",
+  "contracts": [
+    "Workflows.getList/getObject/search/create/update/delete",
+    "Workflows.validate/execute/setExecutorAdapter",
+    "Workflows.versions/list/delete/publish",
+    "Workflows.executions.list",
+    "Workflows.onWorkflowExecute/onWorkflowCatalog",
+    "workflowSlashCommands /workflow list/search/validate/execute"
+  ],
+  "exports": [
+    ".",
+    "./backend",
+    "./ui",
+    "./entity",
+    "./package.json",
+    "./package-structure",
+    "./launcher",
+    "./observability"
+  ],
+  "folderCounts": {
+    "src/ui": 11,
+    "src/backend": 126,
+    "src/entity": 9,
+    "migrations": 5,
+    "tests": 16
+  },
+  "launcher": "playground.mjs",
+  "observability": true,
+  "eighthPassGapClosure": {
+    "implemented": true,
+    "summary": "Eighth pass workflow AI and `.node` import contract"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "runMetadata": [
+    "runId",
+    "workflowId",
+    "workflowVersion",
+    "nodeExecutionEvents",
+    "inputArtifactReferences",
+    "outputArtifactReferences",
+    "checksums",
+    "recordCounts",
+    "qualityGateResults",
+    "modelMetrics",
+    "warnings",
+    "errors",
+    "duration"
+  ],
+  "lineageEventShape": {
+    "runId": "string",
+    "workflowId": "string",
+    "nodeId": "string",
+    "jobName": "string",
+    "inputs": [],
+    "outputs": [],
+    "facets": {
+      "quality": {},
+      "security": {},
+      "model": {},
+      "domain": {}
+    }
+  }
+}

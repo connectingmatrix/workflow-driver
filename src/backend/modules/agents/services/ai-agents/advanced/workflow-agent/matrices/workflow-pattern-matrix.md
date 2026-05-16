@@ -1,0 +1,29 @@
+# Workflow Pattern Matrix
+
+- BATCH_FILE_ETL: start, shared-space, respond-end
+- STREAMING_EVENT_ETL: start, shared-space, respond-end
+- DATABASE_TO_WAREHOUSE_ETL: start, shared-space, respond-end
+- API_TO_DATABASE_ETL: start, shared-space, respond-end
+- FHIR_BULK_EXPORT_ETL: start, shared-space, respond-end
+- X12_837_CLAIM_INGEST: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- X12_835_REMITTANCE_INGEST: start, shared-space, respond-end
+- RCM_CSV_PROFILE_AND_FEATURES: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- RCM_DENIAL_PREDICTION: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- RCM_REMITTANCE_RECONCILIATION: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- RCM_CLAIM_STATUS_WORKFLOW: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- CLAIM_UNDERPAYMENT_DETECTION: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- CLAIM_APPEAL_PRIORITIZATION: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- PATIENT_BALANCE_SEGMENTATION: start, shared-space, respond-end
+- MEDICAL_BILLING_KNOWLEDGE_PACKAGE: shared-space, rcm-csv-stream-profiler, rcm-feature-builder, rcm-decision-tree-trainer, rcm-neural-net-trainer, rcm-model-scorer, rcm-knowledge-publisher, evaluator, respond-end
+- SENTIMENT_ANALYSIS_PIPELINE: start, shared-space, respond-end
+- CHURN_ANALYSIS_PIPELINE: start, shared-space, respond-end
+- CUSTOM_NEURAL_NET_TRAINING: start, shared-space, respond-end
+- CUSTOM_DECISION_TREE_TRAINING: start, shared-space, respond-end
+- MODEL_SCORING_PIPELINE: start, shared-space, respond-end
+- MODEL_DRIFT_MONITORING: start, shared-space, respond-end
+- DATA_QUALITY_GATE_PIPELINE: start, shared-space, respond-end
+- PHI_REDACTION_PIPELINE: start, shared-space, respond-end
+- DATA_LINEAGE_CAPTURE: start, shared-space, respond-end
+- DATABASE_PROVISION_AND_API_EXPOSURE: start, shared-space, respond-end
+- AI_AGENT_DRIVEN_WORKFLOW: start, shared-space, respond-end
+- HUMAN_REVIEW_QUEUE_WORKFLOW: start, shared-space, respond-end

@@ -1,0 +1,34 @@
+# Domain Entity Matrix
+
+- Patient: patient
+- Subscriber: subscriber
+- Member: member
+- Provider: provider
+- Facility: facility
+- Payer: payer
+- Plan: plan
+- Encounter: encounter
+- Claim: claim
+- Claim Line: claim_line
+- Charge: charge
+- Diagnosis Code: diagnosis_code
+- Procedure Code: procedure_code
+- Modifier: modifier
+- Eligibility Request: eligibility_request
+- Eligibility Response: eligibility_response
+- Claim Status Request: claim_status_request
+- Claim Status Response: claim_status_response
+- Remittance Advice: remittance_advice
+- Payment: payment
+- Adjustment: adjustment
+- Denial: denial
+- Denial Reason: denial_reason
+- Appeal: appeal
+- Prior Authorization: prior_authorization
+- Patient Responsibility: patient_responsibility
+- Aging Bucket: aging_bucket
+- Work Queue Item: work_queue_item
+- RCM Event: rcm_event
+- Audit Event: audit_event
+- Model Score: model_score
+- Feature Artifact: feature_artifact

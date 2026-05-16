@@ -1,0 +1,256 @@
+{
+  "gates": [
+    {
+      "gateId": "SCHEMA_CONFORMANCE",
+      "dimension": "Schema conformance",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Schema conformance must pass configured threshold"
+      ],
+      "onFailure": "stop-error",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "REQUIRED_FIELDS",
+      "dimension": "Required fields",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Required fields must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "TYPE_VALIDITY",
+      "dimension": "Type validity",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Type validity must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "NULL_MISSINGNESS_THRESHOLDS",
+      "dimension": "Null/missingness thresholds",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Null/missingness thresholds must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "DUPLICATE_DETECTION",
+      "dimension": "Duplicate detection",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Duplicate detection must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "REFERENTIAL_INTEGRITY",
+      "dimension": "Referential integrity",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Referential integrity must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "RANGE_VALIDITY",
+      "dimension": "Range validity",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Range validity must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "FRESHNESS",
+      "dimension": "Freshness",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Freshness must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "VOLUME_ANOMALY",
+      "dimension": "Volume anomaly",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Volume anomaly must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "DISTRIBUTION_DRIFT",
+      "dimension": "Distribution drift",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Distribution drift must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "CODE_SET_VALIDITY",
+      "dimension": "Code-set validity",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Code-set validity must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "PHI_REDACTION_CHECK",
+      "dimension": "PHI redaction check",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "PHI redaction check must pass configured threshold"
+      ],
+      "onFailure": "stop-error",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "FILE_CHECKSUM_CHECK",
+      "dimension": "File checksum check",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "File checksum check must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "RECORD_COUNT_RECONCILIATION",
+      "dimension": "Record count reconciliation",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Record count reconciliation must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "SOURCE_TO_TARGET_RECONCILIATION",
+      "dimension": "Source-to-target reconciliation",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Source-to-target reconciliation must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "MODEL_LABEL_LEAKAGE_CHECK",
+      "dimension": "Model label leakage check",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Model label leakage check must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "TARGET_DISTRIBUTION_CHECK",
+      "dimension": "Target distribution check",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Target distribution check must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    },
+    {
+      "gateId": "MODEL_PERFORMANCE_THRESHOLD",
+      "dimension": "Model performance threshold",
+      "appliesTo": "workflow artifact",
+      "stage": "before downstream use",
+      "rules": [
+        "Model performance threshold must pass configured threshold"
+      ],
+      "onFailure": "route-to-review",
+      "artifacts": [
+        "validation-report.json",
+        "failed-row-sample-redacted.json"
+      ]
+    }
+  ]
+}

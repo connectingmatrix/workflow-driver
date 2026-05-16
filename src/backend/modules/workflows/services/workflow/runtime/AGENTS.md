@@ -1,0 +1,295 @@
+# AGENTS.md
+
+## Directory Context
+
+- Path: `packages/apps/workflow/src/services/workflow/runtime`
+- This folder owns the production code files in this folder.
+
+## Contract
+
+- Keep all code in this folder aligned with its layer package boundary.
+- If any production code file in this folder is updated, update this AGENTS.md in the same change.
+- This AGENTS file must document each owned file purpose, input/output shape, role rules, logic gates, functions, exports, and line snippets.
+
+## File Usage Specification
+
+### `bindWorkflowCredentials.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - `credentialScopes` (L33-L33, arrow)
+  - `activeCredentialId` (L52-L52, function)
+  - `bindWorkflowCredentials` (L86-L86, function)
+- Exports:
+  - `bindWorkflowCredentials` (L86)
+- Key snippets and use-case mapping:
+  - `L33-L33`: Implements `credentialScopes` for this module use case.
+  - `L52-L52`: Implements `activeCredentialId` for this module use case.
+  - `L86-L86`: Implements `bindWorkflowCredentials` for this module use case.
+### `credential-host-context.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - `workflowEditorUrl` (L83-L83, arrow)
+  - `canReadOrgWorkflow` (L85-L85, arrow)
+  - `isUuid` (L88-L88, arrow)
+  - `managedRecord` (L98-L98, arrow)
+  - `managedSummaryRecord` (L111-L111, arrow)
+  - `readPermissions` (L130-L130, arrow)
+  - `publishWorkflowRow` (L175-L175, arrow)
+  - `createdRow` (L216-L216, arrow)
+  - `getWorkflowDefinition` (L425-L425, arrow)
+  - `deleteWorkflowDefinition` (L473-L473, arrow)
+  - `publishWorkflowDefinition` (L487-L487, arrow)
+  - `attachmentNodeType` (L496-L496, arrow)
+  - `resolveAttachmentScopeId` (L503-L503, arrow)
+  - `workflowManagementPayload` (L599-L599, arrow)
+  - `workflowManagementSummary` (L600-L600, arrow)
+- Exports:
+  - None
+- Key snippets and use-case mapping:
+  - `L83-L83`: Implements `workflowEditorUrl` for this module use case.
+  - `L85-L85`: Implements `canReadOrgWorkflow` for this module use case.
+  - `L88-L88`: Implements `isUuid` for this module use case.
+  - `L98-L98`: Implements `managedRecord` for this module use case.
+  - `L111-L111`: Implements `managedSummaryRecord` for this module use case.
+  - `L130-L130`: Implements `readPermissions` for this module use case.
+  - `L175-L175`: Implements `publishWorkflowRow` for this module use case.
+  - `L216-L216`: Implements `createdRow` for this module use case.
+  - `L425-L425`: Implements `getWorkflowDefinition` for this module use case.
+  - `L473-L473`: Implements `deleteWorkflowDefinition` for this module use case.
+  - `L487-L487`: Implements `publishWorkflowDefinition` for this module use case.
+  - `L496-L496`: Implements `attachmentNodeType` for this module use case.
+  - `L503-L503`: Implements `resolveAttachmentScopeId` for this module use case.
+  - `L599-L599`: Implements `workflowManagementPayload` for this module use case.
+  - `L600-L600`: Implements `workflowManagementSummary` for this module use case.
+### `runtime-utils.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - None detected by static scan.
+- Exports:
+  - None
+- Key snippets and use-case mapping:
+  - `L1-L17`: File-level constants/types behavior.
+### `service.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - None detected by static scan.
+- Exports:
+  - None
+- Key snippets and use-case mapping:
+  - `L1-L118`: File-level constants/types behavior.
+### `setupWorkflowExecutor.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - `record` (L22-L22, arrow)
+- Exports:
+  - None
+- Key snippets and use-case mapping:
+  - `L22-L22`: Implements `record` for this module use case.
+### `validation.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - `workflowNodes` (L3-L3, function)
+  - `workflowConnections` (L7-L7, function)
+  - `reachableNodeIds` (L11-L11, function)
+  - `workflowValidationErrors` (L32-L32, function)
+  - `assertExecutableWorkflow` (L60-L60, function)
+- Exports:
+  - `workflowValidationErrors` (L32)
+  - `assertExecutableWorkflow` (L60)
+- Key snippets and use-case mapping:
+  - `L3-L3`: Implements `workflowNodes` for this module use case.
+  - `L7-L7`: Implements `workflowConnections` for this module use case.
+  - `L11-L11`: Implements `reachableNodeIds` for this module use case.
+  - `L32-L32`: Implements `workflowValidationErrors` for this module use case.
+  - `L60-L60`: Implements `assertExecutableWorkflow` for this module use case.
+### `webhook.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - `normalizeHeaders` (L14-L14, function)
+  - `resolveBaseUrl` (L48-L48, function)
+  - `resolveWorkflowRuntimeSettings` (L65-L65, function)
+  - `buildWorkflowWebhookRequest` (L89-L89, function)
+  - `requiresWorkflowWebhookSecret` (L102-L102, function)
+  - `resolveStartNodeWebhookConfig` (L106-L106, function)
+  - `validateWorkflowWebhookInvocation` (L121-L121, function)
+  - `applyWebhookRequestToWorkflow` (L151-L151, function)
+  - `extractWorkflowTerminalPayload` (L211-L211, function)
+  - `loadPersistedWorkflowRecord` (L228-L228, function)
+  - `resolveExecutionWorkflow` (L268-L268, function)
+  - `verifyWorkflowSecret` (L277-L277, function)
+- Exports:
+  - `resolveWorkflowRuntimeSettings` (L65)
+  - `buildWorkflowWebhookRequest` (L89)
+  - `requiresWorkflowWebhookSecret` (L102)
+  - `resolveStartNodeWebhookConfig` (L106)
+  - `validateWorkflowWebhookInvocation` (L121)
+  - `applyWebhookRequestToWorkflow` (L151)
+  - `extractWorkflowTerminalPayload` (L211)
+  - `loadPersistedWorkflowRecord` (L228)
+  - `resolveExecutionWorkflow` (L268)
+  - `verifyWorkflowSecret` (L277)
+- Key snippets and use-case mapping:
+  - `L14-L14`: Implements `normalizeHeaders` for this module use case.
+  - `L48-L48`: Implements `resolveBaseUrl` for this module use case.
+  - `L65-L65`: Implements `resolveWorkflowRuntimeSettings` for this module use case.
+  - `L89-L89`: Implements `buildWorkflowWebhookRequest` for this module use case.
+  - `L102-L102`: Implements `requiresWorkflowWebhookSecret` for this module use case.
+  - `L106-L106`: Implements `resolveStartNodeWebhookConfig` for this module use case.
+  - `L121-L121`: Implements `validateWorkflowWebhookInvocation` for this module use case.
+  - `L151-L151`: Implements `applyWebhookRequestToWorkflow` for this module use case.
+  - `L211-L211`: Implements `extractWorkflowTerminalPayload` for this module use case.
+  - `L228-L228`: Implements `loadPersistedWorkflowRecord` for this module use case.
+  - `L268-L268`: Implements `resolveExecutionWorkflow` for this module use case.
+  - `L277-L277`: Implements `verifyWorkflowSecret` for this module use case.
+### `workflow-identity.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - None detected by static scan.
+- Exports:
+  - None
+- Key snippets and use-case mapping:
+  - `L1-L38`: File-level constants/types behavior.
+### `workflowExecutorRequestContext.ts`
+- Purpose: Defines module behavior owned by this usage folder.
+- Owning use cases: Runtime and application flows that import this file through package boundaries.
+- Input shape: Typed arguments and imported contracts declared in this file signatures.
+- Output shape: Typed return values, thrown errors, and exported contracts declared in this file.
+- Role interaction rules:
+  - `User`: Allowed through explicit service/resolver authorization and scoped data access only.
+  - `Root User`: Can execute elevated flows where caller context resolves root privileges.
+  - `Super Admin`: Can execute organization-level privileged flows where membership and role gates pass.
+- Logic gates summary:
+  - Authorization and scope checks must run before read/write side effects.
+  - Entity/ORM boundaries must remain the source of persisted data access.
+  - MCP or GraphQL proxy boundaries must avoid duplicated domain validation.
+- Functions (all):
+  - `text` (L3-L3, arrow)
+  - `headers` (L4-L4, arrow)
+  - `createWorkflowExecutorRequestContext` (L16-L16, arrow)
+- Exports:
+  - `createWorkflowExecutorRequestContext` (L16)
+- Key snippets and use-case mapping:
+  - `L3-L3`: Implements `text` for this module use case.
+  - `L4-L4`: Implements `headers` for this module use case.
+  - `L16-L16`: Implements `createWorkflowExecutorRequestContext` for this module use case.
+
+## Non-Negotiable Coding Standards
+
+- Never ever write supabase.from we have entities always load data through it
+- Do not use `supabase.from` or `input.from` directly. Load data through entities and the ORM.
+- Do not add autofills
+- Do not add placeholder, do not add normalisation.
+- Find and fix the root cause instead of adding the fallback.
+- Do not add fallbacks. Fix the logic.
+- Everything should be typed dont use unknown, never, any
+- Do not use JS-style safe/coercion helper functions.
+- Do not use `to*` functions like `toPayload`.
+- Do not create map functions.
+- Do not check types like `type === Array` or `type === string`.
+- Use the `||` operator for comparison.
+- Do not write a code file bigger than 70-100 lines.
+- Try to generalise multiple lines of code into fewer lines.
+- After writing code, recheck patterns across the workspace to remove duplications.
+- Do not invent functionality. Ask the user if it already exists somewhere.
+- Prefer the smallest correct change over broad refactors.
+- Preserve the repo's existing style, structure, and package manager.
+- Avoid destructive git commands unless explicitly requested.
+- Keep memory entries concise, factual, and tied to the files or behavior that changed.
+- Entity table name should come from the Entity and not direct usage.
+- Function naming should be .create, .delete .find .update .find .findBy .deleteBy
+- Disallowed naming conventions are createRows, listRows and any programatic name for the entity.
+- Importing supabase in the entities is disallowed. Upgrade the ORM file is something is not supported by entity. Orm is present at @gigav2/orm
+- If Create, Update, Delete, Find is unable to do any thing stop the coding and inform the user of your updates first.
+- Do not create proxy or additional functions for create, update, delete
+- Keep ORM generic do not add Entity functions in the ORM
+- MCP.ts will execute inner graphql for the operations they will not implement any
+- JSON is disallowed in the Graphql Schema use proper types only
+- Dont use zod for typing

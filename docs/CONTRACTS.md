@@ -1,0 +1,94 @@
+# @connectingmatrix/workflows
+
+Workflow CRUD, versioning, validation, execution events, slash commands, dataloaders, and designer launcher. Imports preserved workflow/executor contracts instead of replacing them.
+
+## Ownership
+
+This package owns its `src/ui`, `src/backend`, `src/entity`, GraphQL bundle, migrations, health/status, launcher, and package contracts. It can be included in backend or UI without assuming a monorepo.
+
+## Public contracts
+
+- `Workflows.getList/getObject/search/create/update/delete`
+- `Workflows.validate/execute/setExecutorAdapter`
+- `Workflows.versions/list/delete/publish`
+- `Workflows.executions.list`
+- `Workflows.onWorkflowExecute/onWorkflowCatalog`
+- `workflowSlashCommands /workflow list/search/validate/execute`
+
+
+## Basic usage
+
+```ts
+import { Workflows } from '@connectingmatrix/workflows';
+const wf = Workflows.create({ name: 'Demo', definition: { nodes: [], edges: [] } }, ctx);
+await Workflows.execute(wf.id, { input: {} }, ctx);
+```
+
+## Server usage
+
+```ts
+import { createPackage } from '@connectingmatrix/workflows';
+const pkg = createPackage();
+await pkg.health?.();
+// register pkg.routes as middleware and merge pkg.graphql into /graphql
+```
+
+## UI usage
+
+Package UI modules expose `bindWithServer('/graphql')` where applicable. Domain packages own their dataloaders; the thin UI only renders/binds.
+
+## Observability and process monitor
+
+All packages expose `PackageObservability`. The server wires logger and sockets into every package. Logger registers package health probes and exposes `/logger/process-monitor` plus `/server/process-monitor`.
+
+## Launcher
+
+Run locally:
+
+```bash
+npm run build
+node playground.mjs
+```
+
+The launcher opens in stub mode so the package can be tested independently, similar to workflow designer stub mode.
+
+## GraphQL and routes
+
+GraphQL namespace and routes are returned by `createPackage()`. Routes include health and launcher endpoints when needed.
+
+## Exports
+
+- `.`
+- `./backend`
+- `./ui`
+- `./entity`
+- `./package.json`
+- `./package-structure`
+- `./launcher`
+- `./observability`
+
+## Folder counts
+
+- `src/ui`: 11 files
+- `src/backend`: 126 files
+- `src/entity`: 9 files
+- `migrations`: 5 files
+- `tests`: 16 files
+
+## Eighth pass workflow AI and `.node` import contract
+
+`@connectingmatrix/workflows` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
+
+Public contracts:
+
+```ts
+Workflows.bindProcessMonitor(processMonitoring);
+Workflows.bindNodes(Nodes);
+Workflows.bindGigaAgents(GigaAgents);
+await Workflows.debugWithAI(workflowId, { message: 'build debug execute current workflow' });
+await Workflows.importNodePackageToWorkflow(workflowId, nodePackage, { x: 100, y: 200 });
+await Workflows.execute(workflowId);
+await Workflows.abortExecution(executionId, 'user aborted');
+```
+
+Dragging a `.node` package onto a workflow routes through `Workflows.importNodePackageToWorkflow(...)`, which delegates the package unpack/import to `@connectingmatrix/nodes`, then adds a user-node entry to the workflow definition for later edit/debug.

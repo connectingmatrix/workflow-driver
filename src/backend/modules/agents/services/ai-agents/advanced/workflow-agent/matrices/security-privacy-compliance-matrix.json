@@ -1,0 +1,120 @@
+{
+  "classifications": [
+    "public",
+    "internal",
+    "confidential",
+    "pii",
+    "phi",
+    "ephi",
+    "financial",
+    "regulated"
+  ],
+  "defaultMedicalBillingClassification": [
+    "phi",
+    "ephi",
+    "financial",
+    "regulated"
+  ],
+  "safeguards": [
+    "minimum necessary",
+    "redaction before logs",
+    "no raw PHI in prompts",
+    "organization-scoped SharedSpace",
+    "checksums",
+    "access controls",
+    "audit logging",
+    "retention notes"
+  ],
+  "nodeRules": [
+    {
+      "nodeId": "shared-space",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "rcm-csv-stream-profiler",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "rcm-feature-builder",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "rcm-decision-tree-trainer",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "rcm-neural-net-trainer",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "rcm-model-scorer",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "rcm-knowledge-publisher",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "evaluator",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    },
+    {
+      "nodeId": "respond-end",
+      "canProcessPhi": true,
+      "canEmitPhi": false,
+      "canLogPhi": false,
+      "canSendToLlm": false,
+      "canWriteToSharedSpace": true,
+      "requiresBackendExecution": true,
+      "requiresApproval": true
+    }
+  ]
+}

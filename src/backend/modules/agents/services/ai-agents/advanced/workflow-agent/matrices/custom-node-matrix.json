@@ -1,0 +1,476 @@
+{
+  "customNodes": [
+    {
+      "customNodeId": "x12-837-parser",
+      "nodeName": "X12 837 Parser",
+      "whyExistingNodesAreInsufficient": "No discovered first-party X12 parser node.",
+      "category": "validation",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "x12-837-parser-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "phi/ephi high",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    },
+    {
+      "customNodeId": "x12-835-parser",
+      "nodeName": "X12 835 Parser",
+      "whyExistingNodesAreInsufficient": "No discovered first-party X12 parser node.",
+      "category": "validation",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "x12-835-parser-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "phi/ephi high",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    },
+    {
+      "customNodeId": "phi-redaction-gate",
+      "nodeName": "Phi Redaction Gate",
+      "whyExistingNodesAreInsufficient": "Used only when existing nodes cannot enforce this contract.",
+      "category": "security",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "phi-redaction-gate-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "phi/ephi high",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    },
+    {
+      "customNodeId": "data-quality-gate",
+      "nodeName": "Data Quality Gate",
+      "whyExistingNodesAreInsufficient": "Used only when existing nodes cannot enforce this contract.",
+      "category": "validation",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "data-quality-gate-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "depends-on-input",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    },
+    {
+      "customNodeId": "model-evaluation-gate",
+      "nodeName": "Model Evaluation Gate",
+      "whyExistingNodesAreInsufficient": "Used only when existing nodes cannot enforce this contract.",
+      "category": "ml-scoring",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "model-evaluation-gate-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "depends-on-input",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    },
+    {
+      "customNodeId": "ai-workflow-governor",
+      "nodeName": "Ai Workflow Governor",
+      "whyExistingNodesAreInsufficient": "Used only when existing nodes cannot enforce this contract.",
+      "category": "validation",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "ai-workflow-governor-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "depends-on-input",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    },
+    {
+      "customNodeId": "claim-denial-labeler",
+      "nodeName": "Claim Denial Labeler",
+      "whyExistingNodesAreInsufficient": "Used only when existing nodes cannot enforce this contract.",
+      "category": "validation",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "claim-denial-labeler-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "depends-on-input",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    },
+    {
+      "customNodeId": "model-drift-monitor",
+      "nodeName": "Model Drift Monitor",
+      "whyExistingNodesAreInsufficient": "Used only when existing nodes cannot enforce this contract.",
+      "category": "ml-scoring",
+      "runtimeOwnership": "backend-tool",
+      "inputs": [
+        "artifactPath",
+        "organizationId"
+      ],
+      "outputs": [
+        "ok",
+        "artifacts",
+        "metrics",
+        "warnings",
+        "errors",
+        "lineage",
+        "security"
+      ],
+      "fields": [
+        "mode",
+        "outputPath"
+      ],
+      "schema": "model-drift-monitor-schema.json",
+      "workerImplementationPlan": "Validate inputs, process artifact references, emit safe structured output.",
+      "backendFunctionPlanIfNeeded": "Use backend execution for privileged data or large files.",
+      "sharedSpaceReads": [
+        "input artifact"
+      ],
+      "sharedSpaceWrites": [
+        "report artifact"
+      ],
+      "databaseReads": [],
+      "databaseWrites": [],
+      "externalApiCalls": [],
+      "phiPiiClassification": "depends-on-input",
+      "securityControls": [
+        "no raw PHI logs",
+        "organization-scoped paths"
+      ],
+      "dataContract": "node input/output schema",
+      "errorContract": "{ ok:false,error:{code,message,details}}",
+      "testFixtures": [
+        "synthetic"
+      ],
+      "unitTests": [
+        "valid fixture",
+        "invalid fixture"
+      ],
+      "integrationTests": [
+        "workflow placement"
+      ],
+      "performanceExpectations": "bounded memory where file based",
+      "documentationRequired": [
+        "README",
+        "schema",
+        "fixtures"
+      ]
+    }
+  ]
+}

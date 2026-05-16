@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "summary": "Human-readable summary",
+  "artifacts": [],
+  "metrics": {},
+  "warnings": [],
+  "errors": [],
+  "lineage": {},
+  "security": {
+    "phiSafe": true,
+    "redacted": true
+  }
+}

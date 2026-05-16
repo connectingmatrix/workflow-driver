@@ -1,0 +1,346 @@
+{
+  "apis": [
+    {
+      "apiName": "POST /api/workflows/rcm-denial/run",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "POST /api/workflows/rcm-denial/run",
+      "method": "POST",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "GET /api/workflows/rcm-denial/runs/:runId",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "GET /api/workflows/rcm-denial/runs/:runId",
+      "method": "GET",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "GET /api/workflows/rcm-denial/runs/:runId/artifacts",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "GET /api/workflows/rcm-denial/runs/:runId/artifacts",
+      "method": "GET",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "POST /api/rcm/scoring/claims",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "POST /api/rcm/scoring/claims",
+      "method": "POST",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "GET /api/rcm/models",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "GET /api/rcm/models",
+      "method": "GET",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "GET /api/rcm/models/:modelId/model-card",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "GET /api/rcm/models/:modelId/model-card",
+      "method": "GET",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "POST /api/rcm/data-sources",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "POST /api/rcm/data-sources",
+      "method": "POST",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "GET /api/rcm/data-quality/reports/:runId",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "GET /api/rcm/data-quality/reports/:runId",
+      "method": "GET",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    },
+    {
+      "apiName": "GET /api/rcm/lineage/:runId",
+      "purpose": "workflow-backed data product endpoint",
+      "route": "GET /api/rcm/lineage/:runId",
+      "method": "GET",
+      "authRequired": true,
+      "allowedRoles": [
+        "organization-admin",
+        "workflow-runner"
+      ],
+      "requestBody": {},
+      "responseBody": {
+        "success": true,
+        "data": {}
+      },
+      "errorResponses": [
+        "UNAUTHORIZED",
+        "VALIDATION_FAILED"
+      ],
+      "databaseTables": [
+        "workflow_runs",
+        "workflow_artifacts"
+      ],
+      "workflowNodesItInvokes": [
+        "execute-workflow"
+      ],
+      "sharedSpaceArtifactsItReadsWrites": [
+        "run folder"
+      ],
+      "rateLimits": "organization policy",
+      "auditEvents": [
+        "api.called"
+      ],
+      "tests": [
+        "auth",
+        "contract"
+      ]
+    }
+  ]
+}

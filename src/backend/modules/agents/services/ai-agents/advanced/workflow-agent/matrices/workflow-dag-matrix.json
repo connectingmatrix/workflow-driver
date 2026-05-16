@@ -1,0 +1,258 @@
+{
+  "workflows": [
+    {
+      "workflowName": "RCM Denial Prediction Pipeline",
+      "workflowPurpose": "Profile, train, score, and publish RCM denial intelligence.",
+      "trigger": "manual or scheduled",
+      "schedule": "optional",
+      "inputParameters": [
+        "organizationId",
+        "sourceFile",
+        "target",
+        "scenario",
+        "bucket"
+      ],
+      "nodes": [
+        {
+          "nodeId": "shared-space",
+          "nodeType": "shared-space",
+          "nodeRole": "Shared Space",
+          "upstreamDependencies": [],
+          "downstreamDependencies": [
+            "rcm-csv-stream-profiler"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "rcm-csv-stream-profiler",
+          "nodeType": "rcm-csv-stream-profiler",
+          "nodeRole": "Rcm Csv Stream Profiler",
+          "upstreamDependencies": [
+            "shared-space"
+          ],
+          "downstreamDependencies": [
+            "rcm-feature-builder"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "rcm-feature-builder",
+          "nodeType": "rcm-feature-builder",
+          "nodeRole": "Rcm Feature Builder",
+          "upstreamDependencies": [
+            "rcm-csv-stream-profiler"
+          ],
+          "downstreamDependencies": [
+            "rcm-decision-tree-trainer"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "rcm-decision-tree-trainer",
+          "nodeType": "rcm-decision-tree-trainer",
+          "nodeRole": "Rcm Decision Tree Trainer",
+          "upstreamDependencies": [
+            "rcm-feature-builder"
+          ],
+          "downstreamDependencies": [
+            "rcm-neural-net-trainer"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "rcm-neural-net-trainer",
+          "nodeType": "rcm-neural-net-trainer",
+          "nodeRole": "Rcm Neural Net Trainer",
+          "upstreamDependencies": [
+            "rcm-decision-tree-trainer"
+          ],
+          "downstreamDependencies": [
+            "rcm-model-scorer"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "rcm-model-scorer",
+          "nodeType": "rcm-model-scorer",
+          "nodeRole": "Rcm Model Scorer",
+          "upstreamDependencies": [
+            "rcm-neural-net-trainer"
+          ],
+          "downstreamDependencies": [
+            "rcm-knowledge-publisher"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "rcm-knowledge-publisher",
+          "nodeType": "rcm-knowledge-publisher",
+          "nodeRole": "Rcm Knowledge Publisher",
+          "upstreamDependencies": [
+            "rcm-model-scorer"
+          ],
+          "downstreamDependencies": [
+            "evaluator"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "evaluator",
+          "nodeType": "evaluator",
+          "nodeRole": "Evaluator",
+          "upstreamDependencies": [
+            "rcm-knowledge-publisher"
+          ],
+          "downstreamDependencies": [
+            "respond-end"
+          ],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        },
+        {
+          "nodeId": "respond-end",
+          "nodeType": "respond-end",
+          "nodeRole": "Respond End",
+          "upstreamDependencies": [
+            "evaluator"
+          ],
+          "downstreamDependencies": [],
+          "inputContract": "typed runtime input",
+          "outputContract": "standard node output",
+          "sharedSpaceArtifacts": [
+            "run artifact"
+          ],
+          "failurePolicy": "fail closed for contract/security failures",
+          "retryPolicy": "executor policy",
+          "checkpointPolicy": "run manifest",
+          "phiPiiHandling": "redacted summaries",
+          "lineageEvents": [
+            "node.started",
+            "node.completed"
+          ],
+          "testCases": [
+            "synthetic fixture"
+          ]
+        }
+      ]
+    }
+  ]
+}

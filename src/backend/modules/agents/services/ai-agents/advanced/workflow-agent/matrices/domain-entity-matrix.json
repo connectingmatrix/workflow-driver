@@ -1,0 +1,1141 @@
+{
+  "entities": [
+    {
+      "entity": "Patient",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "patient",
+      "apiResource": "patient",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Subscriber",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "subscriber",
+      "apiResource": "subscriber",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Member",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "member",
+      "apiResource": "member",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Provider",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "provider",
+      "apiResource": "provider",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Facility",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "facility",
+      "apiResource": "facility",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Payer",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "payer",
+      "apiResource": "payer",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Plan",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "plan",
+      "apiResource": "plan",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Encounter",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "encounter",
+      "apiResource": "encounter",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Claim",
+      "sourceStandards": [
+        "X12 837",
+        "CSV",
+        "FHIR Claim"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "claim",
+      "apiResource": "claim",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Claim Line",
+      "sourceStandards": [
+        "X12 837",
+        "CSV",
+        "FHIR Claim"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "claim_line",
+      "apiResource": "claim-line",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Charge",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "charge",
+      "apiResource": "charge",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Diagnosis Code",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "diagnosis_code",
+      "apiResource": "diagnosis-code",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Procedure Code",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "procedure_code",
+      "apiResource": "procedure-code",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Modifier",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "modifier",
+      "apiResource": "modifier",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Eligibility Request",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "eligibility_request",
+      "apiResource": "eligibility-request",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Eligibility Response",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "eligibility_response",
+      "apiResource": "eligibility-response",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Claim Status Request",
+      "sourceStandards": [
+        "X12 837",
+        "CSV",
+        "FHIR Claim"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "claim_status_request",
+      "apiResource": "claim-status-request",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Claim Status Response",
+      "sourceStandards": [
+        "X12 837",
+        "CSV",
+        "FHIR Claim"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "claim_status_response",
+      "apiResource": "claim-status-response",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Remittance Advice",
+      "sourceStandards": [
+        "X12 835",
+        "CSV"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "remittance_advice",
+      "apiResource": "remittance-advice",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Payment",
+      "sourceStandards": [
+        "X12 835",
+        "CSV"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "payment",
+      "apiResource": "payment",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Adjustment",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "adjustment",
+      "apiResource": "adjustment",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Denial",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "denial",
+      "apiResource": "denial",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Denial Reason",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "denial_reason",
+      "apiResource": "denial-reason",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Appeal",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "appeal",
+      "apiResource": "appeal",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Prior Authorization",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "prior_authorization",
+      "apiResource": "prior-authorization",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Patient Responsibility",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [
+        "name",
+        "memberId",
+        "dateOfBirth",
+        "rawText"
+      ],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "patient_responsibility",
+      "apiResource": "patient-responsibility",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Aging Bucket",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "aging_bucket",
+      "apiResource": "aging-bucket",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Work Queue Item",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "work_queue_item",
+      "apiResource": "work-queue-item",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "RCM Event",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "rcm_event",
+      "apiResource": "rcm-event",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Audit Event",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "audit_event",
+      "apiResource": "audit-event",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Model Score",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "model_score",
+      "apiResource": "model-score",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    },
+    {
+      "entity": "Feature Artifact",
+      "sourceStandards": [
+        "CSV",
+        "API"
+      ],
+      "commonFields": [
+        "id",
+        "organizationId",
+        "sourceSystem",
+        "createdAt"
+      ],
+      "sensitiveFields": [],
+      "normalizationRules": [
+        "stable ids",
+        "parse dates",
+        "trim codes"
+      ],
+      "databaseTable": "feature_artifact",
+      "apiResource": "feature-artifact",
+      "workflowNodesThatTouchIt": [
+        "shared-space",
+        "data-quality-gate"
+      ],
+      "qualityRules": [
+        "id required",
+        "organization scope required"
+      ],
+      "lineageRequirements": [
+        "source artifact",
+        "run id"
+      ],
+      "retentionNotes": "follow organization policy"
+    }
+  ]
+}

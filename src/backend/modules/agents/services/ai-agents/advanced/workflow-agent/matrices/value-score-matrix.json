@@ -1,0 +1,51 @@
+{
+  "sections": [
+    {
+      "name": "Requirement Coverage",
+      "points": 15
+    },
+    {
+      "name": "Node/Workflow Completeness",
+      "points": 20
+    },
+    {
+      "name": "Data Engineering Correctness",
+      "points": 20
+    },
+    {
+      "name": "Backend/API/Database Completeness",
+      "points": 10
+    },
+    {
+      "name": "Security/Privacy/Compliance",
+      "points": 15
+    },
+    {
+      "name": "AI/ML Correctness",
+      "points": 10
+    },
+    {
+      "name": "Testing/Validation",
+      "points": 5
+    },
+    {
+      "name": "Documentation/Delivery",
+      "points": 5
+    }
+  ],
+  "acceptanceThresholds": {
+    "complete": "90-100",
+    "mostlyComplete": "80-89",
+    "partial": "70-79",
+    "failed": "below 70"
+  },
+  "caps": [
+    "60 without executable node graph",
+    "60 without PHI controls",
+    "65 without data quality gates",
+    "70 without custom node tests",
+    "75 without Workflow Cypher validation",
+    "80 without SharedSpace artifacts",
+    "80 without backend/API/database when implied"
+  ]
+}
