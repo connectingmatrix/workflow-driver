@@ -1,4 +1,4 @@
-# @connectingmatrix/workflow-driver
+# @connectingmatrix/workflows
 
 Workflow CRUD, versioning, validation, execution events, slash commands, dataloaders, and designer launcher. Imports preserved workflow/executor contracts instead of replacing them.
 
@@ -19,7 +19,7 @@ This package owns its `src/client`, `src/backend`, `src/entity`, GraphQL bundle,
 ## Basic usage
 
 ```ts
-import { Workflows } from '@connectingmatrix/workflow-driver';
+import { Workflows } from '@connectingmatrix/workflows';
 const wf = Workflows.create({ name: 'Demo', definition: { nodes: [], edges: [] } }, ctx);
 await Workflows.execute(wf.id, { input: {} }, ctx);
 ```
@@ -27,7 +27,7 @@ await Workflows.execute(wf.id, { input: {} }, ctx);
 ## Server usage
 
 ```ts
-import { createPackage } from '@connectingmatrix/workflow-driver';
+import { createPackage } from '@connectingmatrix/workflows';
 const pkg = createPackage();
 await pkg.health?.();
 // register pkg.routes as middleware and merge pkg.graphql into /graphql
@@ -77,7 +77,7 @@ GraphQL namespace and routes are returned by `createPackage()`. Routes include h
 
 ## Eighth pass workflow AI and `.node` import contract
 
-`@connectingmatrix/workflow-driver` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
+`@connectingmatrix/workflows` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
 
 Public contracts:
 

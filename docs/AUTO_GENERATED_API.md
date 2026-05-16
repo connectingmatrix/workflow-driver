@@ -2,7 +2,7 @@
 
 ```json
 {
-  "package": "@connectingmatrix/workflow-driver",
+  "package": "@connectingmatrix/workflows",
   "summary": "Workflow CRUD, versioning, validation, execution events, slash commands, dataloaders, and designer launcher. Imports preserved workflow/executor contracts instead of replacing them.",
   "contracts": [
     "Workflows.getList/getObject/search/create/update/delete",
@@ -36,7 +36,7 @@
 
 ## Eighth pass workflow AI and `.node` import contract
 
-`@connectingmatrix/workflow-driver` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
+`@connectingmatrix/workflows` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
 
 Public contracts:
 

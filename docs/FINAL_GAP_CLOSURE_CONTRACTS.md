@@ -1,6 +1,6 @@
 # Final Gap Closure Contracts
 
-Package: `@connectingmatrix/workflow-driver`
+Package: `@connectingmatrix/workflows`
 
 This document records the final implementation pass for the package-segregated architecture. Each package keeps its own `src/client`, `src/backend`, `src/entity`, migrations, GraphQL/API contracts, health/status, launcher and tests. Backend/UI shells only wire or render package surfaces.
 
