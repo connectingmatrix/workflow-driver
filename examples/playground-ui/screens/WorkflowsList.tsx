@@ -6,10 +6,10 @@ import { Button } from '../components/Button';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { useNavigate } from 'react-router';
-import { listWorkflows, subscribeWorkflowCatalog } from '@/dataloaders';
+import { listWorkflows, subscribeWorkflowCatalog } from '@giga/dataloader/client/legacy/dataloaders';
 import { useUiDataContext } from '../contexts/AuthSessionContext';
 import { chatRoute } from '../data/chatRoute';
-import type { EntityRecord } from '@/orm';
+import type { EntityRecord } from '@giga/dataloader/client/legacy/orm';
 
 interface ChatAttachment {
     id: string;

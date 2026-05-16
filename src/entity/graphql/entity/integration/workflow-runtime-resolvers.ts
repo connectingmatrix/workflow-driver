@@ -1,5 +1,5 @@
 import { executeWorkflowControlOperation } from '@connectingmatrix/ai-agents/services/ai-agents/advanced/runtime/workflow-control';
-import { listenWorkflowLiveEvents } from '@connectingmatrix/workflows/services/workflow/agent/runtime/workflow-operation';
+import { listenWorkflowLiveEvents } from '@connectingmatrix/workflow-driver/services/workflow/agent/runtime/workflow-operation';
 import { EntityRequestContext } from '@connectingmatrix/orm/orm/request-entity-context';
 
 const record = (value: unknown): Record<string, unknown> =>

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router';
 import { DesignerDialog } from '@workflow/ui';
 import type { WorkflowDefinition, WorkflowRunLogEvent } from '@workflow/ui/workflow/types';
-import { loadWorkflow } from '@/dataloaders';
+import { loadWorkflow } from '@giga/dataloader/client/legacy/dataloaders';
 import { emptyNodeCatalog, emptyWorkflow, workflowFromRecord, workflowUiDriver } from '@/workflow/workflow-ui-driver';
 import { useUiDataContext } from '../contexts/AuthSessionContext';
 import { useToast } from '../components/Toast';

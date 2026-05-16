@@ -1,13 +1,13 @@
 import { createRunId } from 'giga-ai-helper/workflow';
 import { Executor } from '@workflow/executor';
 import { logger, markLifecycle } from '@connectingmatrix/logger/lifecycle-jsonl';
-import { queueDesignerWorkflowExecution } from '@connectingmatrix/workflows/services/workflow/queue';
+import { queueDesignerWorkflowExecution } from '@connectingmatrix/workflow-driver/services/workflow/queue';
 import {
   WorkflowExecuteMutationInput,
   WorkflowExecuteMutationPayload,
   WorkflowExecutionModeEnum,
   WorkflowExecutionRequestContext,
-} from '@connectingmatrix/workflows/services/workflow/contracts/types';
+} from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import './setupWorkflowExecutor';
 import { assertExecutableWorkflow } from './validation';
 

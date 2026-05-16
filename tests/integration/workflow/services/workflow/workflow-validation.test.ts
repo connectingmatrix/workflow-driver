@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { executeWorkflowMutation } from '@connectingmatrix/workflows/services/workflow/runtime/service';
-import { workflowValidationErrors } from '@connectingmatrix/workflows/services/workflow/runtime/validation';
-import { WorkflowExecutionModeEnum, WorkflowNodeStatusEnum } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import { executeWorkflowMutation } from '@connectingmatrix/workflow-driver/services/workflow/runtime/service';
+import { workflowValidationErrors } from '@connectingmatrix/workflow-driver/services/workflow/runtime/validation';
+import { WorkflowExecutionModeEnum, WorkflowNodeStatusEnum } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type { WorkflowDefinition } from '@giga/shared/types/contracts/workflow.types';
 
 const emptyWorkflow: WorkflowDefinition = {

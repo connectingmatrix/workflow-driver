@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { bindWorkflowCredentials } from '@connectingmatrix/workflows/services/workflow/runtime/bindWorkflowCredentials';
+import { bindWorkflowCredentials } from '@connectingmatrix/workflow-driver/services/workflow/runtime/bindWorkflowCredentials';
 
 const workflow = (credentialId = '') =>
   ({

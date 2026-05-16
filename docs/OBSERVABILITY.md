@@ -1,4 +1,4 @@
-# Observability for `@connectingmatrix/workflows`
+# Observability for `@connectingmatrix/workflow-driver`
 
 This package binds to `@connectingmatrix/logger` and, when available, `@connectingmatrix/sockets` during server composition.
 

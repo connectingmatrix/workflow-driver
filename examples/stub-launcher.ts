@@ -2,7 +2,7 @@ import { nowIso, type PackageLauncherPanel, type RequestContext } from './contra
 
 export function createConnectingmatrixWorkflowsStubLauncher(context: RequestContext = {}): PackageLauncherPanel {
   return {
-    packageName: '@connectingmatrix/workflows',
+    packageName: '@connectingmatrix/workflow-driver',
     title: 'Workflow Designer Launcher',
     mode: 'stub',
     status: 'ready',

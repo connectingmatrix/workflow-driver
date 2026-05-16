@@ -2,7 +2,7 @@ import { Plus, Sparkles, Database, Users, FileText, BookOpen, Zap, List } from '
 import { Button } from '../components/Button';
 import { Card } from '../components/Card';
 import { useNavigate } from 'react-router';
-import { createWorkflow } from '@/dataloaders';
+import { createWorkflow } from '@giga/dataloader/client/legacy/dataloaders';
 import { useUiDataContext } from "../contexts/AuthSessionContext";
 import { useToast } from '../components/Toast';
 

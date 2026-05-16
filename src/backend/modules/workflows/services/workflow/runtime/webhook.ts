@@ -2,8 +2,8 @@ import { Request } from 'express';
 import { cloneJson, toSafeString } from 'giga-ai-helper';
 import { OrganisationEntity, WorkflowEntity } from '@connectingmatrix/orm/repositories/entities';
 import { EnvLoader } from '@giga/shared/lib/env';
-import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflows/services/workflow/runtime/workflow-identity';
-import { WorkflowAuthModeEnum, WorkflowDefinition, WorkflowRuntimeSettings } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflow-driver/services/workflow/runtime/workflow-identity';
+import { WorkflowAuthModeEnum, WorkflowDefinition, WorkflowRuntimeSettings } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type { PersistedWorkflowRecord, WorkflowRecordScope, WorkflowWebhookRequestPayload } from '@giga/shared/types/contracts/workflow.types';
 
 export type { PersistedWorkflowRecord, WorkflowWebhookRequestPayload } from '@giga/shared/types/contracts/workflow.types';

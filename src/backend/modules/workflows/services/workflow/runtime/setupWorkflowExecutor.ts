@@ -13,7 +13,7 @@ import {
   rejectPendingWebhookTestRequest,
   resolvePendingWebhookTestRequest,
 } from '@connectingmatrix/sockets/workflow/editor-presence';
-import { createWorkflowReferenceHostContext } from '@connectingmatrix/workflows/services/workflow/contracts/execution-reference';
+import { createWorkflowReferenceHostContext } from '@connectingmatrix/workflow-driver/services/workflow/contracts/execution-reference';
 import { applyWorkflowQueueEvent } from '../queue/write/applyWorkflowQueueEvent';
 import { executeQueuedWorkflowRequest } from '../queue/write/executeQueuedWorkflowRequest';
 import { executeWorkflowChatAdapterAction } from '../integration/workflowExecutorChatAdapterBindings';

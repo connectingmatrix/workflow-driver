@@ -2,7 +2,7 @@ import { BadRequestError } from 'routing-controllers';
 import { createRunId } from 'giga-ai-helper/workflow';
 import { Executor } from '@workflow/executor';
 import { assertExecutableWorkflow } from './validation';
-import type { WorkflowDefinition, WorkflowExecutionRequestContext, WorkflowRuntimeSettings } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import type { WorkflowDefinition, WorkflowExecutionRequestContext, WorkflowRuntimeSettings } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 
 const validationRunEnabled = () => String(process.env.WORKFLOW_PUBLISH_VALIDATION_RUN || '1').trim() !== '0';
 const validationTimeoutSeconds = () => Math.max(5, Math.min(300, Number(process.env.WORKFLOW_PUBLISH_VALIDATION_SECONDS || 45)));

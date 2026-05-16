@@ -1,4 +1,4 @@
-# Documentation index for @connectingmatrix/workflows
+# Documentation index for @connectingmatrix/workflow-driver
 
 - [README](README.md)
 - [Contracts](docs/CONTRACTS.md)

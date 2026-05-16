@@ -1,7 +1,7 @@
-# Usage for @connectingmatrix/workflows
+# Usage for @connectingmatrix/workflow-driver
 
 ```ts
-import { Workflows } from '@connectingmatrix/workflows';
+import { Workflows } from '@connectingmatrix/workflow-driver';
 const wf = Workflows.create({ name: 'Demo', definition: { nodes: [], edges: [] } }, ctx);
 await Workflows.execute(wf.id, { input: {} }, ctx);
 ```
@@ -10,7 +10,7 @@ See `../README.md` for the full contract list.
 
 ## Eighth pass workflow AI and `.node` import contract
 
-`@connectingmatrix/workflows` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
+`@connectingmatrix/workflow-driver` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
 
 Public contracts:
 

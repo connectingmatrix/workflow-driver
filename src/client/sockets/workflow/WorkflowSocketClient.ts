@@ -1,5 +1,5 @@
 import { io, Socket } from 'socket.io-client';
-import { API_ORIGIN, WORKFLOW_WS_URL } from '@/graphql/env';
+import { API_ORIGIN, WORKFLOW_WS_URL } from '@giga/dataloader/client/legacy/graphql/env';
 import { resolveSocketConfig } from '../core/socket-url';
 
 export type WorkflowSocketEvent = {

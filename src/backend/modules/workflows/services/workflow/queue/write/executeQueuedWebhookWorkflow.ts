@@ -1,11 +1,11 @@
 import { Executor, type WorkflowQueueCompletedEvent } from '@workflow/executor';
 import { GigaORM } from '@connectingmatrix/orm/orm';
 import { WorkflowExecutionEntity } from '@connectingmatrix/orm/repositories/entities';
-import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflows/services/workflow/runtime/workflow-identity';
-import { extractWorkflowTerminalPayload } from '@connectingmatrix/workflows/services/workflow/runtime/webhook';
+import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflow-driver/services/workflow/runtime/workflow-identity';
+import { extractWorkflowTerminalPayload } from '@connectingmatrix/workflow-driver/services/workflow/runtime/webhook';
 import { queueWebhookWorkflowExecution } from './queueWebhookWorkflowExecution';
 import type { Request, Response } from 'express';
-import type { PersistedWorkflowRecord, WorkflowWebhookRequestPayload } from '@connectingmatrix/workflows/services/workflow/runtime/webhook';
+import type { PersistedWorkflowRecord, WorkflowWebhookRequestPayload } from '@connectingmatrix/workflow-driver/services/workflow/runtime/webhook';
 
 const createAbortSignal = (request: Request, response: Response): AbortSignal => {
   const controller = new AbortController();

@@ -1,8 +1,8 @@
-import { createRequestId } from '@/graphql/client';
-import { GRAPHQL_API_URL, API_ORIGIN } from '@/graphql/env';
-import type { UiDataContext } from '@/dataloaders';
-import { createUserNode, deleteUserNode, executeWorkflow, listUserNodes, listWorkflows, updateUserNode } from '@/dataloaders';
-import type { EntityRecord, JsonObject, UserNodeRecord, WorkflowUserNodeInput } from '@/orm';
+import { createRequestId } from '@giga/dataloader/client/legacy/graphql/client';
+import { GRAPHQL_API_URL, API_ORIGIN } from '@giga/dataloader/client/legacy/graphql/env';
+import type { UiDataContext } from '@giga/dataloader/client/legacy/dataloaders';
+import { createUserNode, deleteUserNode, executeWorkflow, listUserNodes, listWorkflows, updateUserNode } from '@giga/dataloader/client/legacy/dataloaders';
+import type { EntityRecord, JsonObject, UserNodeRecord, WorkflowUserNodeInput } from '@giga/dataloader/client/legacy/orm';
 import { createGigaNodeCatalog } from '@workflow/nodes';
 import type { WorkflowDefinition, WorkflowNodeSchema, WorkflowSourceFiles } from '@workflow/ui/workflow/types';
 import type { WorkflowNodeCatalog, WorkflowRealtimeClient, WorkflowUiDriver } from '@workflow/ui/workflow/driver';

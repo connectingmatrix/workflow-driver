@@ -1,7 +1,7 @@
 import { Executor } from '@workflow/executor';
 import { executeWorkflow } from '@connectingmatrix/nodes/services/workflow/executor';
-import { createWorkflowReferenceHostContext } from '@connectingmatrix/workflows/services/workflow/contracts/execution-reference';
-import { extractWorkflowTerminalPayload } from '@connectingmatrix/workflows/services/workflow/runtime/webhook';
+import { createWorkflowReferenceHostContext } from '@connectingmatrix/workflow-driver/services/workflow/contracts/execution-reference';
+import { extractWorkflowTerminalPayload } from '@connectingmatrix/workflow-driver/services/workflow/runtime/webhook';
 import { restoreWorkflowExecutionRequestContext } from '../runtime/restoreWorkflowRequestContext';
 import type { WorkflowQueueEvent, WorkflowQueueRequest } from '@workflow/executor';
 

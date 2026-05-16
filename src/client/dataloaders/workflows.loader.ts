@@ -1,9 +1,9 @@
-import { executeWorkflowOperation, workflowCatalogRecordsOperation, workflowRecordOperation } from '@/orm';
-import type { EntityListResult, EntityMutationInput, EntityRecord, JsonObject } from '@/orm';
-import type { UiDataContext } from '@/dataloaders/context';
-import { assertCanPerform } from '@/dataloaders/permissions.loader';
-import { readStoredTokens } from '@/graphql/helper';
-import { WorkflowSocketClient, type WorkflowSocketEvent } from '@/socket/workflow/WorkflowSocketClient';
+import { executeWorkflowOperation, workflowCatalogRecordsOperation, workflowRecordOperation } from '@giga/dataloader/client/legacy/orm';
+import type { EntityListResult, EntityMutationInput, EntityRecord, JsonObject } from '@giga/dataloader/client/legacy/orm';
+import type { UiDataContext } from '@giga/dataloader/client/legacy/dataloaders/context';
+import { assertCanPerform } from '@giga/dataloader/client/legacy/dataloaders/permissions.loader';
+import { readStoredTokens } from '@giga/dataloader/client/legacy/graphql/helper';
+import { WorkflowSocketClient, type WorkflowSocketEvent } from '@giga/dataloader/client/legacy/socket/workflow/WorkflowSocketClient';
 
 export const listWorkflows = async (context: UiDataContext): Promise<EntityListResult> => {
     assertCanPerform(context.policy, 'Workflow', 'list');

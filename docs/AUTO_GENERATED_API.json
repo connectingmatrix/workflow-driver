@@ -1,5 +1,5 @@
 {
-  "package": "@connectingmatrix/workflows",
+  "package": "@connectingmatrix/workflow-driver",
   "summary": "Workflow CRUD, versioning, validation, execution events, slash commands, dataloaders, and designer launcher. Imports preserved workflow/executor contracts instead of replacing them.",
   "contracts": [
     "Workflows.getList/getObject/search/create/update/delete",

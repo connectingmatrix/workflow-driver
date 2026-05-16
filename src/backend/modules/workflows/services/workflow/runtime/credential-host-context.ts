@@ -15,16 +15,16 @@ import { runUpdateWorkflowFromCypher } from '@connectingmatrix/chat/services/cha
 import { resolvePostId, resolveTreeNodeId } from '@connectingmatrix/chat/services/chat/actions/runtime/helpers';
 import { WorkflowEntity, WorkflowVersionEntity } from '@connectingmatrix/orm/repositories/entities';
 import { RESOURCE_TYPES } from '@giga/shared/types/contracts/graph.types';
-import { bindWorkflowCredentials } from '@connectingmatrix/workflows/services/workflow/runtime/bindWorkflowCredentials';
-import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflows/services/workflow/runtime/workflow-identity';
-import { WorkflowNodeStatusEnum } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import { bindWorkflowCredentials } from '@connectingmatrix/workflow-driver/services/workflow/runtime/bindWorkflowCredentials';
+import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflow-driver/services/workflow/runtime/workflow-identity';
+import { WorkflowNodeStatusEnum } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type { AgentActionRuntime } from '@giga/shared/types/contracts/agent.types';
 import type {
   WorkflowExecutionRequestContext,
   WorkflowNodeHandlerResult,
   WorkflowRuntimeSettings,
   WorkflowDefinition,
-} from '@connectingmatrix/workflows/services/workflow/contracts/types';
+} from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type { WorkflowBackendRequest } from '@giga/shared/types/contracts/workflow.types';
 import type { WorkflowCredentialHostContext } from '@workflow/executor';
 

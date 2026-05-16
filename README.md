@@ -1,4 +1,4 @@
-# @connectingmatrix/workflows
+# @connectingmatrix/workflow-driver
 
 Workflow CRUD, versioning, validation, execution events, slash commands, dataloaders, and designer launcher. Imports preserved workflow/executor contracts instead of replacing them.
 
@@ -19,7 +19,7 @@ This package owns its `src/client`, `src/backend`, `src/entity`, GraphQL bundle,
 ## Basic usage
 
 ```ts
-import { Workflows } from '@connectingmatrix/workflows';
+import { Workflows } from '@connectingmatrix/workflow-driver';
 const wf = Workflows.create({ name: 'Demo', definition: { nodes: [], edges: [] } }, ctx);
 await Workflows.execute(wf.id, { input: {} }, ctx);
 ```
@@ -27,7 +27,7 @@ await Workflows.execute(wf.id, { input: {} }, ctx);
 ## Server usage
 
 ```ts
-import { createPackage } from '@connectingmatrix/workflows';
+import { createPackage } from '@connectingmatrix/workflow-driver';
 const pkg = createPackage();
 await pkg.health?.();
 // register pkg.routes as middleware and merge pkg.graphql into /graphql
@@ -64,7 +64,7 @@ GraphQL namespace and routes are returned by `createPackage()`. Routes include h
 - `./entity`
 - `./package.json`
 - `./package-structure`
-- `./launcher`
+- `./services/package-status.service`
 - `./observability`
 
 ## Folder counts
@@ -83,7 +83,7 @@ See `docs/FINAL_GAP_CLOSURE_CONTRACTS.md` for the final process-monitor, project
 
 ## Eighth pass workflow AI and `.node` import contract
 
-`@connectingmatrix/workflows` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
+`@connectingmatrix/workflow-driver` owns workflow CRUD, validation, execution, versions, execution sockets/events, workflow AI sessions, and import of user `.node` packages into workflows. It binds the preserved workflow/executor packages through adapters and does not rewrite their contracts.
 
 Public contracts:
 
@@ -114,3 +114,12 @@ See `docs/FINAL_RUNTIME_CONTRACTS.md` for the final package-owned API, routes, l
 - `Workflows.importNodePackageToWorkflow(workflowId, archive, position)`
 
 See `docs/AUTO_GENERATED_CONTRACTS.md` and `docs/OBSERVABILITY.md` for generated operational docs.
+
+
+## Examples
+
+Debug/demo launchers live in `examples/`. Run `npm run play` after `npm run build`.
+
+## Package documentation
+
+See `docs/INDEX.md` for the final clean workspace contract and `examples/` launcher/debug notes.

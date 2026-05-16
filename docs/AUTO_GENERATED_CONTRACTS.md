@@ -1,4 +1,4 @@
-# Auto-generated contracts for `@connectingmatrix/workflows`
+# Auto-generated contracts for `@connectingmatrix/workflow-driver`
 
 This document is generated from the final package audit. The package owns its `src/client`, `src/backend`, `src/entity`, migrations, GraphQL/API surfaces, health/status, launcher, and tests unless this is a thin shell repo.
 
@@ -14,7 +14,7 @@ This document is generated from the final package audit. The package owns its `s
 ## Package use
 
 ```ts
-import { createPackage } from '@connectingmatrix/workflows';
+import { createPackage } from '@connectingmatrix/workflow-driver';
 const pkg = createPackage();
 await pkg.health?.();
 ```

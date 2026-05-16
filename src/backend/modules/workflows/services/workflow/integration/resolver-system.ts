@@ -12,9 +12,9 @@ import {
   isRestrictedScope,
   requireWorkflowScopeType,
 } from '@giga/general/services/graphql/resolvers/integration/base';
-import { bindWorkflowCredentials } from '@connectingmatrix/workflows/services/workflow/runtime/bindWorkflowCredentials';
-import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflows/services/workflow/runtime/workflow-identity';
-import type { WorkflowDefinition } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import { bindWorkflowCredentials } from '@connectingmatrix/workflow-driver/services/workflow/runtime/bindWorkflowCredentials';
+import { normalizeWorkflowSnapshotIdentity } from '@connectingmatrix/workflow-driver/services/workflow/runtime/workflow-identity';
+import type { WorkflowDefinition } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type { OrganizationAccessContext } from '@giga/shared/types/contracts/org.types';
 import type { WorkflowCollectionObject, WorkflowDeleteArgs, WorkflowInsertArgs, WorkflowUpdateArgs } from '@giga/shared/types';
 

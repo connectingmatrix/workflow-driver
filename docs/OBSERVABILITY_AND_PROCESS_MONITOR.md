@@ -1,4 +1,4 @@
-# Observability for @connectingmatrix/workflows
+# Observability for @connectingmatrix/workflow-driver
 
 This package exports `PackageObservability` and is wired by `@connectingmatrix/server`. The logger binds sockets, registers package health probes, and emits process snapshots for CPU/memory/process status surfaces.
 

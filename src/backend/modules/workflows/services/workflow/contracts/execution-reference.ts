@@ -9,20 +9,20 @@ import { executeWorkflow } from '@connectingmatrix/nodes/services/workflow/execu
 import {
   createWorkflowExecutorHostContext,
   getWorkflowExecutionRequestContext,
-} from '@connectingmatrix/workflows/services/workflow/runtime/credential-host-context';
+} from '@connectingmatrix/workflow-driver/services/workflow/runtime/credential-host-context';
 // eslint-disable-next-line import/no-cycle
 import {
   extractWorkflowTerminalPayload,
   loadPersistedWorkflowRecord,
   resolveExecutionWorkflow,
-} from '@connectingmatrix/workflows/services/workflow/runtime/webhook';
-import { WorkflowNodeStatusEnum } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+} from '@connectingmatrix/workflow-driver/services/workflow/runtime/webhook';
+import { WorkflowNodeStatusEnum } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type {
   WorkflowExecutionRequestContext,
   WorkflowNodeHandlerResult,
   WorkflowRuntimeSettings,
   WorkflowDefinition,
-} from '@connectingmatrix/workflows/services/workflow/contracts/types';
+} from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type { WorkflowBackendRequest } from '@giga/shared/types/contracts/workflow.types';
 
 type WorkflowExecutionScope = 'user' | 'organization';

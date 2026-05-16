@@ -20,7 +20,7 @@ const item = (
   optional: string[],
   notes: string[],
 ) => ({
-  packageName: '@connectingmatrix/workflows',
+  packageName: '@connectingmatrix/workflow-driver',
   operationName,
   kind,
   inputType,

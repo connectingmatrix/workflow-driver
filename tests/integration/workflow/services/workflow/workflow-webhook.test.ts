@@ -8,8 +8,8 @@ import {
   requiresWorkflowWebhookSecret,
   validateWorkflowWebhookInvocation,
   WorkflowWebhookRequestPayload,
-} from '@connectingmatrix/workflows/services/workflow/runtime/webhook';
-import { WorkflowDefinition } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+} from '@connectingmatrix/workflow-driver/services/workflow/runtime/webhook';
+import { WorkflowDefinition } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 
 function buildWorkflow(): WorkflowDefinition {
   return {

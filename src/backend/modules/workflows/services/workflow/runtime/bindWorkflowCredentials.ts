@@ -1,7 +1,7 @@
 import { listCredentials } from '@giga/general/services/credentials/runtime/service';
 import { resolveRuntimeCredentialAccess } from '@giga/general/services/credentials/auth/access';
-import { parseRecordValue, parseStringValue } from '@connectingmatrix/workflows/services/workflow/runtime/runtime-utils';
-import type { WorkflowDefinition, WorkflowNodeModel } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import { parseRecordValue, parseStringValue } from '@connectingmatrix/workflow-driver/services/workflow/runtime/runtime-utils';
+import type { WorkflowDefinition, WorkflowNodeModel } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 
 type WorkflowPublishScope = 'user' | 'organization' | 'global';
 type PublishCredentialServices = {

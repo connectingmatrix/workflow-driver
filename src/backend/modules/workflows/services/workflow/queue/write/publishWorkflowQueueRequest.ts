@@ -1,5 +1,5 @@
 import { Executor } from '@workflow/executor';
-import '@connectingmatrix/workflows/services/workflow/runtime/setupWorkflowExecutor';
+import '@connectingmatrix/workflow-driver/services/workflow/runtime/setupWorkflowExecutor';
 import type { WorkflowQueueRequest } from '@workflow/executor';
 
 export const getWorkflowQueueRequestProducer = async () => ({

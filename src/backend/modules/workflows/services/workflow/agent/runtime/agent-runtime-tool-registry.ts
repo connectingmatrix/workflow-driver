@@ -4,8 +4,8 @@ import { withEntityRequestContext } from '@connectingmatrix/orm/services/graphql
 import { runOpenAIAgentsSdkAgent } from '@connectingmatrix/ai-agents/services/ai-agents/runtime/openai-agents-sdk';
 import { runStoredAIAgent } from '@connectingmatrix/ai-agents/services/ai-agents/runtime/agent-service';
 import { executeBackendAgentCommand } from '@giga/execute-backend/services/agent/execute-backend';
-import { WorkflowNodeStatusEnum } from '@connectingmatrix/workflows/services/workflow/contracts/types';
-import type { WorkflowNodeHandlerContext, WorkflowNodeHandlerResult } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import { WorkflowNodeStatusEnum } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
+import type { WorkflowNodeHandlerContext, WorkflowNodeHandlerResult } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 import type { GraphqlResolverContext } from '@giga/shared/types/contracts/graphql.types';
 import type { AgentActionPlan, AgentToolExecution, AgentToolSpec } from '@workflow/nodes/nodes/ai-agent/runtime';
 

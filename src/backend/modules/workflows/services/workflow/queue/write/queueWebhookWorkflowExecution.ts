@@ -4,10 +4,10 @@ import { GigaORM } from '@connectingmatrix/orm/orm';
 import { logger } from '@connectingmatrix/logger/lifecycle-jsonl';
 import { isCurrentUserRootUser } from '@giga/shared/lib/helper';
 import { OrganisationEntity, WorkflowExecutionEntity, WorkflowVersionEntity } from '@connectingmatrix/orm/repositories/entities';
-import { resolveWorkflowRuntimeSettings } from '@connectingmatrix/workflows/services/workflow/runtime/webhook';
-import '@connectingmatrix/workflows/services/workflow/runtime/setupWorkflowExecutor';
+import { resolveWorkflowRuntimeSettings } from '@connectingmatrix/workflow-driver/services/workflow/runtime/webhook';
+import '@connectingmatrix/workflow-driver/services/workflow/runtime/setupWorkflowExecutor';
 import type { Request } from 'express';
-import type { PersistedWorkflowRecord, WorkflowWebhookRequestPayload } from '@connectingmatrix/workflows/services/workflow/runtime/webhook';
+import type { PersistedWorkflowRecord, WorkflowWebhookRequestPayload } from '@connectingmatrix/workflow-driver/services/workflow/runtime/webhook';
 import type { WorkflowDefinition, WorkflowReference } from '@giga/shared/types/contracts/workflow.types';
 
 export interface EnqueueWebhookWorkflowExecutionResult {

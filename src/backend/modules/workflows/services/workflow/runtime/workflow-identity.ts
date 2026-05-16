@@ -1,5 +1,5 @@
 import { cloneJson, toSafeString } from 'giga-ai-helper';
-import { WorkflowDefinition } from '@connectingmatrix/workflows/services/workflow/contracts/types';
+import { WorkflowDefinition } from '@connectingmatrix/workflow-driver/services/workflow/contracts/types';
 
 const readMetadata = (value: unknown): Record<string, unknown> =>
   value && typeof value === 'object' && !Array.isArray(value) ? (value as Record<string, unknown>) : {};

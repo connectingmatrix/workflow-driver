@@ -165,7 +165,7 @@ export class PackageObservabilityRuntime {
   }
 }
 
-export const PackageObservability = new PackageObservabilityRuntime('@connectingmatrix/workflows');
+export const PackageObservability = new PackageObservabilityRuntime('@connectingmatrix/workflow-driver');
 export const bindPackageObservability = (binding: ObservabilityBinding) => PackageObservability.bind(binding);
 export const packageRuntimeSnapshot = () => ({ logs: PackageObservability.logsSnapshot(), processes: PackageObservability.processSnapshot() });
 
