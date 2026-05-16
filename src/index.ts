@@ -36,78 +36,6 @@ function defaultWorkflowAgent(input: { workflow?: WorkflowRecord; message: strin
 function recordDebug(workflowId: string, sessionId: string, role: WorkflowDebugEvent['role'], content: string, context: RequestContext, metadata?: Record<string, unknown>) { return debugEvents.create({ workflowId, sessionId, role, content, metadata }, context); }
 function nameFromPrompt(prompt: string, fallback: string) { return (prompt.match(/name:\s*([^,\n]+)/i)?.[1] ?? fallback).trim(); }
 
-
-export interface WorkflowQueueStatus {
-  processId: string;
-  executionId: string;
-  runId: string;
-  workflowId: string;
-  status: 'queued' | 'running' | 'completed' | 'failed' | 'aborted';
-  progress: number;
-  source: 'executor-kafka' | 'local';
-  updatedAt: string;
-  logs: string[];
-  metadata?: Record<string, unknown>;
-}
-export interface WorkflowExecutorPubSubBridge {
-  queueWorkflowForExecution?: (config?: unknown) => { connect?: () => Promise<void>; disconnect?: () => Promise<void>; publish: (request: Record<string, unknown>) => Promise<void> };
-  consumeWorkflowExecutionEvents?: (options: { applyExecutionEvent: (event: Record<string, unknown>) => Promise<void> | void; config?: unknown; handleExecutionEventError?: (params: { error: unknown; event: unknown }) => Promise<void> | void }) => { start: () => Promise<void>; stop: (params?: { force?: boolean }) => Promise<void> };
-  cancelRun?: (runId: string) => number | Promise<number>;
-  cancelWorkflow?: (workflowId: string) => number | Promise<number>;
-  getRunning?: (workflowId?: string | null) => Array<Record<string, unknown>>;
-}
-const workflowQueueStatuses = new Map<string, WorkflowQueueStatus>();
-const workflowExecutionToRecord = new Map<string, string>();
-const workflowRunToProcess = new Map<string, string>();
-let workflowExecutorPubSub: WorkflowExecutorPubSubBridge | undefined;
-let workflowExecutorConfig: unknown;
-let workflowQueueProducer: Awaited<ReturnType<NonNullable<WorkflowExecutorPubSubBridge['queueWorkflowForExecution']>>> | undefined;
-let workflowQueueConsumer: ReturnType<NonNullable<WorkflowExecutorPubSubBridge['consumeWorkflowExecutionEvents']>> | undefined;
-function workflowQueueProcessId(runId: string) { return `workflow:run:${runId}`; }
-function workflowQueueUser(context: RequestContext) { return context.userId ?? context.organizationId ?? 'anonymous'; }
-function workflowQueueScope(context: RequestContext): 'user'|'organization'|'global' { return context.organizationId ? 'organization' : context.root ? 'global' : 'user'; }
-function workflowQueueRequest(wf: WorkflowRecord, executionId: string, runId: string, input: unknown, context: RequestContext): Record<string, unknown> {
-  const userId = workflowQueueUser(context);
-  const workflowDefinition = { metadata: { ...(wf.definition.metadata as Record<string, unknown> | undefined), id: wf.id, name: wf.name }, nodes: nodeArray(wf.definition), connections: edgeArray(wf.definition), edges: edgeArray(wf.definition), input };
-  return { executionId, runId, queueKey: context.organizationId ? `org:${context.organizationId}` : `user:${userId}`, userId, broadcastId: userId, broadcastChannelName: 'workflow-socket', triggerType: 'designer', workflowReference: { workflowId: wf.id, scope: workflowQueueScope(context), organizationId: context.organizationId ?? null, ownerUserId: context.userId ?? null }, workflowVersionId: wf.publishedVersionId ?? null, workflow: workflowDefinition, settings: { package: '@connectingmatrix/workflows', mode: 'queued' }, requestContext: { mode: context.root ? 'admin' : 'user', userId, authorization: context.headers?.authorization ?? null, headers: context.headers ?? {}, path: '/workflows/execute', body: input }, metadata: { packageName: '@connectingmatrix/workflows', source: 'connectingmatrix-workflows' } };
-}
-function workflowQueueApply(event: Record<string, unknown>, context: RequestContext = {}): WorkflowQueueStatus {
-  const runId = String(event.runId ?? event.processId ?? makeId('run'));
-  const executionId = String(event.executionId ?? runId);
-  const workflowId = String(event.workflowId ?? (event.workflowReference && typeof event.workflowReference === 'object' ? (event.workflowReference as Record<string, unknown>).workflowId : '') ?? 'unknown');
-  const processId = workflowRunToProcess.get(runId) ?? workflowQueueProcessId(runId);
-  const type = String(event.type ?? event.status ?? 'running').toLowerCase();
-  const status: WorkflowQueueStatus['status'] = type === 'completed' || type === 'success' ? 'completed' : type === 'failed' || type === 'error' ? 'failed' : type === 'aborted' || type === 'cancelled' ? 'aborted' : type === 'queued' ? 'queued' : 'running';
-  const log = event.log && typeof event.log === 'object' ? event.log as Record<string, unknown> : undefined;
-  const message = String(log?.message ?? event.errorMessage ?? event.message ?? (status === 'completed' ? 'Workflow completed' : status === 'failed' ? 'Workflow failed' : status === 'queued' ? 'Workflow queued' : 'Workflow running'));
-  const previous = workflowQueueStatuses.get(processId);
-  const next: WorkflowQueueStatus = { processId, executionId, runId, workflowId, status, progress: status === 'queued' ? 0 : status === 'running' ? 50 : 100, source: 'executor-kafka', updatedAt: nowIso(), logs: [...(previous?.logs ?? []), message].slice(-500), metadata: { event } };
-  workflowQueueStatuses.set(processId, next);
-  workflowRunToProcess.set(runId, processId);
-  const recordId = workflowExecutionToRecord.get(executionId);
-  if (recordId) {
-    const mapped = status === 'completed' ? 'success' : status === 'failed' ? 'error' : status === 'aborted' ? 'aborted' : status;
-    try { execs.update(recordId, { status: mapped as WorkflowExecution['status'], logs: next.logs, output: status === 'completed' ? (event.result ?? event.payload) : undefined }, { root: true }); } catch {}
-  }
-  processMonitoring?.heartbeat?.(processId, { status: status === 'failed' ? 'error' : status === 'aborted' ? 'stale' : 'ok', message, metadata: { workflowId, executionId, runId, queue: 'redpanda' } });
-  processMonitoring?.appendLog?.(processId, status === 'failed' ? 'error' : 'info', message, { event });
-  if (status === 'completed') processMonitoring?.complete?.(processId, { workflowId, executionId, runId });
-  if (status === 'failed') processMonitoring?.fail?.(processId, event.errorMessage ?? message, { workflowId, executionId, runId });
-  if (status === 'aborted') processMonitoring?.abort?.(processId, message);
-  void bus.emit('workflow:queue-status', next);
-  return next;
-}
-async function ensureWorkflowQueueStarted(): Promise<void> {
-  if (!workflowExecutorPubSub) return;
-  if (!workflowQueueProducer && workflowExecutorPubSub.queueWorkflowForExecution) {
-    workflowQueueProducer = workflowExecutorPubSub.queueWorkflowForExecution(workflowExecutorConfig);
-    await workflowQueueProducer.connect?.();
-  }
-  if (!workflowQueueConsumer && workflowExecutorPubSub.consumeWorkflowExecutionEvents) {
-    workflowQueueConsumer = workflowExecutorPubSub.consumeWorkflowExecutionEvents({ applyExecutionEvent: (event) => { workflowQueueApply(event as Record<string, unknown>); }, config: workflowExecutorConfig });
-    await workflowQueueConsumer.start();
-  }
-}
 export const Workflows = {
   bindWithServer(_endpoint: string) { return Workflows; },
   bindLogger(logger: unknown) { PackageObservability.bind({ logger: logger as never }); return Workflows; },
@@ -144,53 +72,16 @@ export const Workflows = {
   async importNodePackageToWorkflow(workflowId: string, archive: unknown, position: Record<string, unknown> = {}, context: RequestContext = {}) { const wf = workflows.get(workflowId, context); if (!wf) throw new Error('Workflow not found'); if (!nodesAdapter?.importNodePackage) throw new Error('@connectingmatrix/nodes must be bound through Workflows.bindNodes(...) to import .node packages'); const node = await nodesAdapter.importNodePackage(archive, context) as { id?: string; name?: string }; const currentNodes = nodeArray(wf.definition); const nextNode = { id: node.id ?? makeId('node'), type: 'user-node', label: node.name ?? 'Imported Node', nodePackageImported: true, ...position }; const updated = Workflows.update(workflowId, { definition: { ...wf.definition, nodes: [...currentNodes, nextNode], edges: edgeArray(wf.definition) } }, context); return { node, workflow: updated }; },
   getDebugEvents(workflowId?: string, context: RequestContext = {}) { const rows = debugEvents.list(context, { limit: 500 }).items; return workflowId ? rows.filter((row)=>row.workflowId===workflowId) : rows; },
   slash(args: string[], context: RequestContext = {}) { const [action = 'help', ...rest] = args; if (action === 'list') { const rows = Workflows.getList({ limit: 25 }, context).items; return rows.length ? rows.map(workflowSummary).join('\n') : 'No workflows found for this scope.'; } if (action === 'search') { const rows = Workflows.search(rest.join(' '), context); return rows.length ? rows.map(workflowSummary).join('\n') : 'No workflows matched the search.'; } if (action === 'validate') return Workflows.validate(rest[0] ?? '', context); if (action === 'execute') return Workflows.execute(rest[0] ?? '', {}, context); if (action === 'debug') return Workflows.debugWithAI(rest[0] ?? '', { message: rest.slice(1).join(' ') || 'Debug workflow' }, context); return 'Workflow commands: /workflow list, /workflow search <term>, /workflow validate <id>, /workflow execute <id>, /workflow debug <id> <message>'; },
-  health(): PackageHealth { return { name: '@connectingmatrix/workflows', status: 'ok', checkedAt: nowIso(), details: { workflows: workflows.list({ root: true }).total, executions: execs.list({ root: true }).total, debugEvents: debugEvents.list({ root: true }).total, executorAdapter: Boolean(executorAdapter), executorPubSubBound: Boolean(workflowExecutorPubSub), queueStatuses: workflowQueueStatuses.size, workflowAgentBound: Boolean(workflowAgentAdapter), preservedWorkflowAIConfigured, nodesAdapterBound: Boolean(nodesAdapter), processMonitoring: Boolean(processMonitoring), ...PackageObservability.healthDetails() } }; },
+  health(): PackageHealth { return { name: '@connectingmatrix/workflows', status: 'ok', checkedAt: nowIso(), details: { workflows: workflows.list({ root: true }).total, executions: execs.list({ root: true }).total, debugEvents: debugEvents.list({ root: true }).total, executorAdapter: Boolean(executorAdapter), workflowAgentBound: Boolean(workflowAgentAdapter), preservedWorkflowAIConfigured, nodesAdapterBound: Boolean(nodesAdapter), processMonitoring: Boolean(processMonitoring), ...PackageObservability.healthDetails() } }; },
 };
 
-
-const originalWorkflowExecute = Workflows.execute.bind(Workflows);
-async function executeWorkflowThroughQueue(id: string, input?: unknown, context: RequestContext = {}): Promise<WorkflowExecution> {
-  const wf = workflows.get(id, context);
-  if (!wf) throw new Error('Workflow not found');
-  const validation = Workflows.validate(id, context);
-  if (!validation.valid) throw new Error(`Workflow validation failed: ${validation.errors.join('; ')}`);
-  await ensureWorkflowQueueStarted();
-  if (!workflowQueueProducer) return originalWorkflowExecute(id, input, context);
-  const executionId = makeId('workflow_exec');
-  const runId = makeId('workflow_run');
-  const processId = workflowQueueProcessId(runId);
-  workflowRunToProcess.set(runId, processId);
-  const proc = processMonitoring?.start?.({ kind: 'Workflows', packageName: '@connectingmatrix/workflows', title: `Workflow ${wf.name}`, targetId: processId, context, metadata: { workflowId: id, executionId, runId, queue: 'redpanda' } });
-  const finalProcessId = processIdOf(proc, processId);
-  workflowRunToProcess.set(runId, finalProcessId);
-  const execution = execs.create({ workflowId: id, status: 'queued', input, logs: ['Execution queued through giga-wf-executor Redpanda pub/sub'], processId: finalProcessId }, context);
-  workflowExecutionToRecord.set(executionId, execution.id);
-  workflowQueueStatuses.set(finalProcessId, { processId: finalProcessId, executionId, runId, workflowId: id, status: 'queued', progress: 0, source: 'executor-kafka', updatedAt: nowIso(), logs: ['Execution queued through giga-wf-executor Redpanda pub/sub'] });
-  processMonitoring?.heartbeat?.(finalProcessId, { status: 'ok', message: 'Workflow execution queued on Redpanda', metadata: { workflowId: id, executionId, runId } });
-  await workflowQueueProducer.publish(workflowQueueRequest(wf, executionId, runId, input, context));
-  await bus.emit('workflow:execute', execution);
-  await bus.emit('workflow:queue-status', workflowQueueStatuses.get(finalProcessId));
-  return execution;
-}
-(Workflows as unknown as { execute: typeof Workflows.execute }).execute = executeWorkflowThroughQueue;
-Object.assign(Workflows, {
-  bindExecutorPubSub(executor: WorkflowExecutorPubSubBridge, config?: unknown) { workflowExecutorPubSub = executor; workflowExecutorConfig = config; return Workflows; },
-  bindWorkflowExecutor(executor: WorkflowExecutorPubSubBridge, config?: unknown) { return (Workflows as unknown as { bindExecutorPubSub: (e: WorkflowExecutorPubSubBridge, c?: unknown) => typeof Workflows }).bindExecutorPubSub(executor, config); },
-  async startExecutorPubSub() { await ensureWorkflowQueueStarted(); return { producer: Boolean(workflowQueueProducer), consumer: Boolean(workflowQueueConsumer) }; },
-  applyExecutorQueueEvent(event: Record<string, unknown>, context: RequestContext = {}) { return workflowQueueApply(event, context); },
-  executionQueueStatus(workflowId?: string) { const rows = [...workflowQueueStatuses.values(), ...(workflowExecutorPubSub?.getRunning?.(workflowId ?? null) ?? []).map((row) => workflowQueueApply({ ...(row as Record<string, unknown>), type: 'running' }))]; return workflowId ? rows.filter((row) => row.workflowId === workflowId) : rows; },
-  queueStatus(workflowId?: string) { return (Workflows as unknown as { executionQueueStatus: (workflowId?: string)=>WorkflowQueueStatus[] }).executionQueueStatus(workflowId); },
-  onWorkflowQueueStatus(handler: (status: WorkflowQueueStatus) => void | Promise<void>) { return bus.on('workflow:queue-status', handler); },
-  onWorkflowExecutionEvent(handler: (status: WorkflowQueueStatus) => void | Promise<void>) { return bus.on('workflow:queue-status', handler); },
-  async abortExecution(runIdOrProcessId: string, reason = 'aborted by user') { const status = workflowQueueStatuses.get(runIdOrProcessId) ?? [...workflowQueueStatuses.values()].find((row) => row.runId === runIdOrProcessId || row.executionId === runIdOrProcessId); const runId = status?.runId ?? runIdOrProcessId; const count = await workflowExecutorPubSub?.cancelRun?.(runId); if (status) workflowQueueApply({ ...status, type: 'aborted', message: reason }); else processMonitoring?.abort?.(runIdOrProcessId, reason); return { runId, cancelled: count ?? 0, reason }; },
-});
 const WorkflowApi = Workflows as typeof Workflows & { versions: typeof Workflows.versions & { delete: typeof Workflows.versionsDelete; publish: typeof Workflows.versionsPublish } };
 Object.assign(WorkflowApi.versions, { delete: Workflows.versionsDelete, publish: Workflows.versionsPublish });
 export const Workflow = WorkflowApi;
 export const workflowSlashCommands = [ { command: '/workflow', owner: '@connectingmatrix/workflows', description: 'List/search/validate/execute/debug workflows', handler: (args: string[], context: RequestContext) => Workflows.slash(args, context) } ];
 export function openDesignerStub(workflowId?: string, context: RequestContext = {}) { return { mode: 'stub' as const, workflowId, title: 'Workflow Designer', context: { userId: context.userId, organizationId: context.organizationId }, panels: ['canvas','catalog','executions','versions','workflow-ai'], workflowAIConfigured: preservedWorkflowAIConfigured }; }
-export const graphql = { namespace: 'workflows', typeDefs: `type Workflow { id: ID!, name: String!, description: String, createdAt: String!, updatedAt: String! } type WorkflowExecution { id: ID!, workflowId: ID!, status: String!, createdAt: String!, updatedAt: String! } type WorkflowValidation { valid: Boolean!, errors: [String!]!, nodes: Int! } type Query { workflowList(limit: Int, offset: Int): [Workflow!]!, workflowGet(id: ID!): Workflow, workflowHealth: String!, workflowDebugEvents(workflowId: ID): String!, workflowQueueStatus(workflowId: ID): String! } type Mutation { workflowCreate(name: String!, description: String): Workflow!, workflowExecute(id: ID!): WorkflowExecution!, workflowDebugWithAI(id: ID!, message: String!): String!, workflowBuildWithAI(message: String!, workflowId: ID): String!, workflowImportNodePackage(workflowId: ID!, archive: String!): String! }`, resolvers: { Query: { workflowList: (_: unknown, args: PaginationOptions, ctx: RequestContext) => Workflows.getList(args, ctx).items, workflowGet: (_: unknown, args: { id: string }, ctx: RequestContext) => Workflows.getObject(args.id, ctx), workflowHealth: () => Workflows.health().status, workflowDebugEvents: (_: unknown,args:{workflowId?:string},ctx:RequestContext)=>JSON.stringify(Workflows.getDebugEvents(args.workflowId,ctx)), workflowQueueStatus: (_: unknown,args:{workflowId?:string})=>JSON.stringify((Workflows as unknown as { queueStatus: (workflowId?: string)=>unknown }).queueStatus(args.workflowId)) }, Mutation: { workflowCreate: (_: unknown, args: { name: string; description?: string }, ctx: RequestContext) => Workflows.create(args, ctx), workflowExecute: (_: unknown, args: { id: string }, ctx: RequestContext) => Workflows.execute(args.id, undefined, ctx), workflowDebugWithAI: async (_:unknown,args:{id:string; message:string},ctx:RequestContext)=>JSON.stringify(await Workflows.debugWithAI(args.id,{message:args.message},ctx)), workflowBuildWithAI: async (_:unknown,args:{message:string; workflowId?:string},ctx:RequestContext)=>JSON.stringify(await Workflows.buildWithAI(args,ctx)), workflowImportNodePackage: async (_:unknown,args:{workflowId:string; archive:string},ctx:RequestContext)=>JSON.stringify(await Workflows.importNodePackageToWorkflow(args.workflowId,args.archive,{},ctx)) } }, migrations: ['migrations/0001_init.sql'] };
-export function createPackage(): PackageModule & { slashCommands: typeof workflowSlashCommands } { return { name: '@connectingmatrix/workflows', version: '0.3.0', health: () => Workflows.health(), graphql, migrations: graphql.migrations, launcher: createStubLauncher, runtime: { Workflows, workflowSlashCommands, observability: PackageObservability }, routes: [{ method: 'GET', path: '/workflows/health', handler: () => Workflows.health() }, { method: 'GET', path: '/workflows/launcher', handler: (request) => createStubLauncher((request as { context?: RequestContext }).context ?? {}) }, { method: 'GET', path: '/workflows', handler: (request) => Workflows.getList({}, (request as { context?: RequestContext }).context ?? {}) }, { method: 'POST', path: '/workflows/debug-with-ai', handler: (request) => Workflows.debugWithAI(String((request as { body?: { id?: string; message?: string } }).body?.id ?? ''), { message: String((request as { body?: { message?: string } }).body?.message ?? '') }, (request as { context?: RequestContext }).context ?? {}) }, { method: 'GET', path: '/workflows/queue-status', handler: (request) => (Workflows as unknown as { queueStatus: (workflowId?: string)=>unknown }).queueStatus(String((request as { body?: { workflowId?: string } }).body?.workflowId ?? '')) }, { method: 'POST', path: '/workflows/abort', handler: (request) => (Workflows as unknown as { abortExecution: (id: string, reason?: string)=>unknown }).abortExecution(String((request as { body?: { processId?: string; runId?: string } }).body?.processId ?? (request as { body?: { runId?: string } }).body?.runId ?? ''), String((request as { body?: { reason?: string } }).body?.reason ?? 'aborted by user')) }, { method: 'POST', path: '/workflows/node/import', handler: (request) => Workflows.importNodePackageToWorkflow(String((request as { body?: { workflowId?: string } }).body?.workflowId ?? ''), (request as { body?: { archive?: unknown } }).body?.archive ?? '', {}, (request as { context?: RequestContext }).context ?? {}) }], slashCommands: workflowSlashCommands }; }
+export const graphql = { namespace: 'workflows', typeDefs: `type Workflow { id: ID!, name: String!, description: String, createdAt: String!, updatedAt: String! } type WorkflowExecution { id: ID!, workflowId: ID!, status: String!, createdAt: String!, updatedAt: String! } type WorkflowValidation { valid: Boolean!, errors: [String!]!, nodes: Int! } type Query { workflowList(limit: Int, offset: Int): [Workflow!]!, workflowGet(id: ID!): Workflow, workflowHealth: String!, workflowDebugEvents(workflowId: ID): String! } type Mutation { workflowCreate(name: String!, description: String): Workflow!, workflowExecute(id: ID!): WorkflowExecution!, workflowDebugWithAI(id: ID!, message: String!): String!, workflowBuildWithAI(message: String!, workflowId: ID): String!, workflowImportNodePackage(workflowId: ID!, archive: String!): String! }`, resolvers: { Query: { workflowList: (_: unknown, args: PaginationOptions, ctx: RequestContext) => Workflows.getList(args, ctx).items, workflowGet: (_: unknown, args: { id: string }, ctx: RequestContext) => Workflows.getObject(args.id, ctx), workflowHealth: () => Workflows.health().status, workflowDebugEvents: (_: unknown,args:{workflowId?:string},ctx:RequestContext)=>JSON.stringify(Workflows.getDebugEvents(args.workflowId,ctx)) }, Mutation: { workflowCreate: (_: unknown, args: { name: string; description?: string }, ctx: RequestContext) => Workflows.create(args, ctx), workflowExecute: (_: unknown, args: { id: string }, ctx: RequestContext) => Workflows.execute(args.id, undefined, ctx), workflowDebugWithAI: async (_:unknown,args:{id:string; message:string},ctx:RequestContext)=>JSON.stringify(await Workflows.debugWithAI(args.id,{message:args.message},ctx)), workflowBuildWithAI: async (_:unknown,args:{message:string; workflowId?:string},ctx:RequestContext)=>JSON.stringify(await Workflows.buildWithAI(args,ctx)), workflowImportNodePackage: async (_:unknown,args:{workflowId:string; archive:string},ctx:RequestContext)=>JSON.stringify(await Workflows.importNodePackageToWorkflow(args.workflowId,args.archive,{},ctx)) } }, migrations: ['migrations/0001_init.sql'] };
+export function createPackage(): PackageModule & { slashCommands: typeof workflowSlashCommands } { return { name: '@connectingmatrix/workflows', version: '0.3.0', health: () => Workflows.health(), graphql, migrations: graphql.migrations, launcher: createStubLauncher, runtime: { Workflows, workflowSlashCommands, observability: PackageObservability }, routes: [{ method: 'GET', path: '/workflows/health', handler: () => Workflows.health() }, { method: 'GET', path: '/workflows/launcher', handler: (request) => createStubLauncher((request as { context?: RequestContext }).context ?? {}) }, { method: 'GET', path: '/workflows', handler: (request) => Workflows.getList({}, (request as { context?: RequestContext }).context ?? {}) }, { method: 'POST', path: '/workflows/debug-with-ai', handler: (request) => Workflows.debugWithAI(String((request as { body?: { id?: string; message?: string } }).body?.id ?? ''), { message: String((request as { body?: { message?: string } }).body?.message ?? '') }, (request as { context?: RequestContext }).context ?? {}) }, { method: 'POST', path: '/workflows/node/import', handler: (request) => Workflows.importNodePackageToWorkflow(String((request as { body?: { workflowId?: string } }).body?.workflowId ?? ''), (request as { body?: { archive?: unknown } }).body?.archive ?? '', {}, (request as { context?: RequestContext }).context ?? {}) }], slashCommands: workflowSlashCommands }; }
 export * from './contracts.js';
 export * from './package-structure.js';
 export * from './observability.js';

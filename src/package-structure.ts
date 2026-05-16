@@ -1,84 +1,17 @@
-export const PACKAGE_STRUCTURE = {
+export const packageStructure = {
   "package": "connectingmatrix-workflows",
-  "structuredAt": "2026-05-15",
-  "layout": "package-owned-ui-backend-entity",
-  "principle": "The package owns its UI contract, backend runtime contract, entity/CRUD contract, GraphQL extension, migrations, tests, and status surface. giga-ai-backend and giga-ai-ui remain thin composition shells.",
-  "entrypoints": {
-    "root": "src/index.ts",
-    "ui": "src/ui/index.ts",
+  "layers": {
+    "client": "src/client/index.ts",
     "backend": "src/backend/index.ts",
     "entity": "src/entity/index.ts",
-    "structure": "src/package-structure.ts"
+    "playgroundUi": "src/playground-ui"
   },
-  "folders": {
-    "src/ui": "browser/UI contract: dataloaders, bindWithServer clients, screens, components, socket clients, and designer entry points",
-    "src/backend": "server contract: package middleware, GraphQL schema/resolvers, backend services, runtime modules, webhooks/uploads/MCP APIs, and health/status",
-    "src/backend/modules": "domain runtime modules owned by this package, grouped by capability instead of legacy app paths",
-    "src/entity": "data contract: entities, repositories, access-scoped CRUD, and entity GraphQL support",
-    "src/entity/entities": "entity classes and persistent record definitions",
-    "src/entity/repositories": "CRUD repositories and persistence adapters",
-    "src/entity/graphql": "entity-owned GraphQL contracts/resolvers/schema helpers",
-    "migrations": "package-owned database migrations",
-    "tests": "unit and integration tests for the package API and compatibility behavior"
+  "meaning": {
+    "client": "Frontend-safe package binders, dataloaders, GraphQL client helpers, socket adapters, and bindWithServer style hooks. This is not the application UI shell.",
+    "backend": "Package-owned backend processing, non-CRUD runtime logic, queues, adapters, routes, and package middleware.",
+    "entity": "Package-owned entities, repositories, package CRUD, migrations, and GraphQL schema/resolvers.",
+    "playgroundUi": "Optional local stub/playground UI fragments only. Real Giga application screens remain in giga-ai-ui."
   },
-  "movesApplied": {
-    "backend": [
-      [
-        "workflow",
-        "modules/workflows"
-      ],
-      [
-        "ai-agents",
-        "modules/agents"
-      ]
-    ],
-    "ui": [
-      [
-        "app/screens",
-        "screens"
-      ],
-      [
-        "workflow",
-        "designer"
-      ],
-      [
-        "socket",
-        "sockets"
-      ]
-    ],
-    "entity": [
-      [
-        "repositories/entities",
-        "entities"
-      ],
-      [
-        "services/graphql",
-        "graphql"
-      ]
-    ]
-  },
-  "counts": {
-    "ui": {
-      "files": 11,
-      "bytes": 51158
-    },
-    "backend": {
-      "files": 126,
-      "bytes": 621977
-    },
-    "entity": {
-      "files": 9,
-      "bytes": 60671
-    },
-    "migrations": {
-      "files": 5,
-      "bytes": 5122
-    },
-    "tests": {
-      "files": 16,
-      "bytes": 67671
-    }
-  }
+  "updatedAt": "2026-05-16T10:33:57.115556+00:00"
 } as const;
-
-export default PACKAGE_STRUCTURE;
+export default packageStructure;

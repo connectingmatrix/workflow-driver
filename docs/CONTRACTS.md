@@ -4,7 +4,7 @@ Workflow CRUD, versioning, validation, execution events, slash commands, dataloa
 
 ## Ownership
 
-This package owns its `src/ui`, `src/backend`, `src/entity`, GraphQL bundle, migrations, health/status, launcher, and package contracts. It can be included in backend or UI without assuming a monorepo.
+This package owns its `src/client`, `src/backend`, `src/entity`, GraphQL bundle, migrations, health/status, launcher, and package contracts. It can be included in backend or UI without assuming a monorepo.
 
 ## Public contracts
 
@@ -69,7 +69,7 @@ GraphQL namespace and routes are returned by `createPackage()`. Routes include h
 
 ## Folder counts
 
-- `src/ui`: 11 files
+- `src/client`: 11 files
 - `src/backend`: 126 files
 - `src/entity`: 9 files
 - `migrations`: 5 files
